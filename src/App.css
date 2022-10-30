@@ -1,38 +1,115 @@
-.App {
+body {
+  background-color: black;
+  color: white;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a:visited {
+  color: pink;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.peace-background {
+  background: url("./assets/images/waterfall-peace.jpg") no-repeat fixed;
+  /* height: 100%; */
+  overflow: hidden;
+  color: #ffffff;
+  position: absolute;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* width: 100%; */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.kirsten-and-nicky-header {
+  text-align: center;
+}
+
+/* .home {
+  background-color: black;
+} */
+
+.home > img {
+  width: 100%;
+}
+
+@font-face {
+  font-family: grenadierNF;
+  src: url("./assets/fonts/GrenadierNF.ttf");
+}
+
+@font-face {
+  font-family: if;
+  src: url("./assets/fonts/If.ttf");
+}
+
+@font-face {
+  font-family: ombres;
+  src: url("./assets/fonts/Ombres.ttf");
+}
+
+@font-face {
+  font-family: punk;
+  src: url("./assets/fonts/punk.ttf");
+}
+
+@font-face {
+  font-family: shockwave;
+  src: url("./assets/fonts/Shockwave.ttf");
+}
+
+main {
+  text-align: center;
+  /* padding: 3em; */
+  /* border: solid white 1px; */
+  /* width: 1000px; */
+}
+.name {
+  color: #00f7f7;
+  font-family: shockwave;
+  /* font-size: 8em; */
+  margin: 0em;
+}
+/* 
+
+.name > * {
+  margin: 0em;
+}
+
+.name > :first-child {
+  text-align: left;
+}
+
+.name > :nth-child(2) {
+  text-align: center;
+  font-size: 0.5em;
+}
+
+.name > :nth-child(3) {
+  text-align: right;
+}
+
+.overlay {
+  background: rgba(50, 70, 80, 0.7);
+  overflow: hidden;
+  height: 100%;
+}
+
+#date {
+  font-family: grenadierNF;
+  font-size: 4em;
   color: white;
-}
+} */
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input[type="submit"] {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }

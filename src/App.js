@@ -5,10 +5,12 @@ import Home from "./containers/Home";
 import Navbar from "./containers/Navbar";
 import AddressCollection from "./containers/AddressCollection";
 import AddressCollectionForms from "./containers/AddressCollectionForms";
+import KirstenAndNicky from "./components/KirstenAndNicky";
 
 function App() {
   return (
     <>
+      <KirstenAndNicky />
       <Navbar />
       <Routes>
         <Route index element={<Home />} />
