@@ -3,7 +3,7 @@ const AddressCollectionForms = () => {
   // console.log("query", query);
   return (
     <div className="addressCollectionForms">
-      <h1>Giv</h1>
+      <h1></h1>
     </div>
   );
 };
