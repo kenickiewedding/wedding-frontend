@@ -11,9 +11,9 @@ export const AuthenticatedApp = () => (
     <Navbar />
     <Routes>
       <Route index element={<Home />} />
-      <Route path="address-collection" element={<AddressCollection />} />
+      <Route path="/address-collection" element={<AddressCollection />} />
       <Route
-        path="address-collection-form"
+        path="/address-collection-form"
         element={<AddressCollectionForms />}
       />
     </Routes>
