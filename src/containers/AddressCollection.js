@@ -16,7 +16,7 @@ const AddressCollection = () => {
   const goToForm = (e) => {
     e.preventDefault();
     navigate({
-      pathname: "address-collection-form",
+      pathname: "/address-collection-form",
       search: `?${createSearchParams(params)}`,
     });
   };
