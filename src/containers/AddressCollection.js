@@ -1,5 +1,6 @@
 import { useState } from "react";
 import UserForm from "../components/UserForm";
+import { createUsers } from "../services/requests";
 
 const AddressCollection = ({ users, firstName, lastName }) => {
   const isPrimary = (user) => {
@@ -47,10 +48,9 @@ const AddressCollection = ({ users, firstName, lastName }) => {
   };
   const fillWithPrimaryData = (index) => {
     const newForm = [...formData];
-    const { email, addressLine1, addressLine2, city, state, zip } = newForm[0];
+    const { addressLine1, addressLine2, city, state, zip } = newForm[0];
     newForm[index] = {
       ...newForm[index],
-      email,
       addressLine1,
       addressLine2,
       city,
@@ -59,18 +59,34 @@ const AddressCollection = ({ users, firstName, lastName }) => {
     };
     setFormData(newForm);
   };
+  const userToForm = (userData, i) => (
+    <UserForm
+      key={`${userData.firstName}${userData.lastName}`}
+      {...userData}
+      fillWithPrimaryData={() => fillWithPrimaryData(i)}
+      updateForm={(key, val) => updateUserInForm(i, key, val)}
+    />
+  );
+
+  const moreThanOneUser = usersNeedingAddress.length > 1;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const usersToSubmit = formData.filter((user) => user.wantToEnter);
+    createUsers(usersToSubmit);
+  };
 
   if (showTheForm) {
     return (
-      <form>
-        {formData.map((userData, i) => (
-          <UserForm
-            key={`${userData.firstName}${userData.lastName}`}
-            {...userData}
-            fillWithPrimaryData={() => fillWithPrimaryData(i)}
-            updateForm={(key, val) => updateUserInForm(i, key, val)}
-          />
-        ))}
+      <form onSubmit={handleSubmit}>
+        {userToForm(formData[0], 0)}
+        {moreThanOneUser && (
+          <h1>Would you like to enter information for any of these people?</h1>
+        )}
+        {formData
+          .slice(1, formData.length)
+          .map((user, i) => userToForm(user, i + 1))}
+        <input type="submit" value="Submit!" />
       </form>
     );
   } else {

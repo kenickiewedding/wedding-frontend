@@ -85,7 +85,8 @@ const UserForm = ({
 
   const showFormButton = (
     <>
-      <button
+      <div
+        className="button"
         onClick={(e) => {
           e.preventDefault();
           updateForm("wantToEnter", !wantToEnter);
@@ -94,7 +95,7 @@ const UserForm = ({
         {wantToEnter
           ? `I don't want to enter data for ${fullName}`
           : `Enter Data for ${fullName}`}
-      </button>
+      </div>
       <br />
     </>
   );
@@ -105,9 +106,9 @@ const UserForm = ({
 
   const useMyInformation = (
     <>
-      <button onClick={handleUseMyInformationClick}>
+      <div className="button" onClick={handleUseMyInformationClick}>
         Use my information to fill this form
-      </button>
+      </div>
       <br />
     </>
   );
@@ -116,7 +117,7 @@ const UserForm = ({
     <>
       <h1>{fullName}</h1>
       {!isPrimary && showFormButton}
-      {wantToEnter && useMyInformation}
+      {wantToEnter && !isPrimary && useMyInformation}
       {wantToEnter && form}
       <br />
     </>
