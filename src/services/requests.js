@@ -5,3 +5,9 @@ export const getUsers = (lastName) => {
     response.json()
   );
 };
+
+export const getFamilyUnit = (firstName, lastName) => {
+  return fetch(
+    API + `/users/save_the_date?first_name=${firstName}&last_name=${lastName}`
+  ).then((res) => res.json());
+};
