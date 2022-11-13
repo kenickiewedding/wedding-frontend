@@ -1,61 +1,81 @@
-import SaveTheDateImage from "../components/SaveTheDateImage";
-import {
-  createSearchParams,
-  Link,
-  useNavigate,
-  useSearchParams
-} from "react-router-dom";
-import { useEffect, useState } from "react";
-import GetUserForm from "../components/GetUserForm";
-import { getFamilyUnit } from "../services/requests";
+import { useState } from "react";
+import UserForm from "../components/UserForm";
 
-const AddressCollection = () => {
-  const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
-  const initialFirstName = searchParams.get("firstName") || "";
-  const initialLastName = searchParams.get("lastName") || "";
-  const [firstName, setFirstName] = useState(initialFirstName);
-  const [lastName, setLastName] = useState(initialLastName);
-  const [users, setUsers] = useState([]);
-  const params = { lastName };
-  const goToForm = (e) => {
-    e.preventDefault();
-    navigate({
-      pathname: "/address-collection-form",
-      search: `?${createSearchParams(params)}`
-    });
+const AddressCollection = ({ users, firstName, lastName }) => {
+  const isPrimary = (user) => {
+    return (
+      user.firstName.toUpperCase() === firstName.toUpperCase() &&
+      user.lastName.toUpperCase() === lastName.toUpperCase()
+    );
   };
-  const getUsers = () => {
-    firstName &&
-      lastName &&
-      getFamilyUnit(firstName, lastName).then((resp) => {
-        if (resp.users) {
-          setUsers(resp.users);
-        } else if (resp.firstName) {
-          setUsers([resp]);
-        } else if (resp.error) {
-          alert(resp.error);
-        }
-      });
-    console.log("users", users);
-  };
-  useEffect(getUsers, []);
-
-  return (
-    <>
-      <h1>Let us know how to reach you!</h1>
-      <SaveTheDateImage />
-      <p>Kirsten & Nicky</p>
-      <p>Would like to know how to reach you!</p>
-      <GetUserForm
-        firstName={firstName}
-        lastName={lastName}
-        setFirstName={setFirstName}
-        setLastName={setLastName}
-        getUsers={getUsers}
-      />
-    </>
+  const totalUsers = users.map((user) => ({
+    ...user,
+    isPrimary: isPrimary(user)
+  }));
+  const usersNeedingAddress = totalUsers.filter((user) => user.addressNeeded);
+  const showTheForm = usersNeedingAddress.some((user) => user);
+  if (
+    usersNeedingAddress.length > 0 &&
+    !usersNeedingAddress.find((user) => user.isPrimary)
+  ) {
+    usersNeedingAddress[0].isPrimary = true;
+  }
+  const primaryUser = usersNeedingAddress.find((user) => user.isPrimary);
+  const nonPrimaryUsers = usersNeedingAddress
+    .filter((user) => !user.isPrimary)
+    .sort((a, b) => a.firstName.localeCompare(b.firstName));
+  const getInitialState = [primaryUser, ...nonPrimaryUsers].map(
+    ({ firstName, lastName, isPrimary }) => ({
+      firstName,
+      lastName,
+      email: "",
+      addressLine1: "",
+      addressLine2: "",
+      city: "",
+      state: "",
+      zip: "",
+      isPrimary,
+      wantToEnter: isPrimary
+    })
   );
+  const [formData, setFormData] = useState(getInitialState);
+  const primaryFormData = formData.find((item) => item.isPrimary);
+  const updateUserInForm = (index, key, val) => {
+    const newForm = [...formData];
+    newForm[index] = { ...newForm[index], [key]: val };
+    setFormData(newForm);
+  };
+  const fillWithPrimaryData = (index) => {
+    const newForm = [...formData];
+    const { email, addressLine1, addressLine2, city, state, zip } = newForm[0];
+    newForm[index] = {
+      ...newForm[index],
+      email,
+      addressLine1,
+      addressLine2,
+      city,
+      state,
+      zip
+    };
+    setFormData(newForm);
+  };
+
+  if (showTheForm) {
+    return (
+      <form>
+        {formData.map((userData, i) => (
+          <UserForm
+            key={`${userData.firstName}${userData.lastName}`}
+            {...userData}
+            fillWithPrimaryData={() => fillWithPrimaryData(i)}
+            updateForm={(key, val) => updateUserInForm(i, key, val)}
+          />
+        ))}
+      </form>
+    );
+  } else {
+    return <></>;
+  }
 };
 
 export default AddressCollection;

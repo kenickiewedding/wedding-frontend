@@ -1,8 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import Navbar from "./Navbar";
-import AddressCollection from "./AddressCollection";
-import AddressCollectionForms from "./AddressCollectionForms";
+import SaveTheDate from "./SaveTheDate";
 import KirstenAndNicky from "../components/KirstenAndNicky";
 
 export const AuthenticatedApp = () => (
@@ -11,11 +10,7 @@ export const AuthenticatedApp = () => (
     <Navbar />
     <Routes>
       <Route index element={<Home />} />
-      <Route path="/address-collection" element={<AddressCollection />} />
-      <Route
-        path="/address-collection-form"
-        element={<AddressCollectionForms />}
-      />
+      <Route path="/save-the-date" element={<SaveTheDate />} />
     </Routes>
   </>
 );
