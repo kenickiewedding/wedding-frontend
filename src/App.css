@@ -176,6 +176,10 @@ textarea {
   border: 1px solid;
 }
 
+input::placeholder{
+  font-size: .8em;
+}
+
 .form-user h1 {
   font-size: 1.5em;
   color: #143642;

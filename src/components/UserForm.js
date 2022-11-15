@@ -10,7 +10,8 @@ const UserForm = ({
   wantToEnter,
   isPrimary,
   updateForm,
-  fillWithPrimaryData
+  toggleUsePrimaryData,
+  usePrimaryData
 }) => {
   const fullName = `${firstName} ${lastName}`;
   const form = (
@@ -29,7 +30,9 @@ const UserForm = ({
       <input
         type="text"
         aria-label="Address Line 1"
+        disabled={usePrimaryData}
         aria-required="false"
+        placeholder={!usePrimaryData && "Address line 1 - ie. 42 Elm Street"}
         value={addressLine1}
         onChange={(e) => updateForm("addressLine1", e.target.value)}
       />
@@ -38,6 +41,8 @@ const UserForm = ({
       <input
         type="text"
         aria-label="Address Line 2"
+        placeholder={!usePrimaryData && "Address line 2 - ie. #237"}
+        disabled={usePrimaryData}
         aria-required="false"
         value={addressLine2}
         onChange={(e) => updateForm("addressLine2", e.target.value)}
@@ -47,8 +52,12 @@ const UserForm = ({
       <input
         type="text"
         aria-label="City"
+        disabled={usePrimaryData}
         aria-required="false"
         value={city}
+        placeholder={
+          !usePrimaryData && "Towns, hamlets, and villages are okay too."
+        }
         onChange={(e) => updateForm("city", e.target.value)}
       />
       <br />
@@ -56,8 +65,12 @@ const UserForm = ({
       <input
         type="text"
         aria-label="State"
+        disabled={usePrimaryData}
         aria-required="false"
         value={state}
+        placeholder={
+          !usePrimaryData && `A US state. Not like "liquid" or "of nature".`
+        }
         onChange={(e) => updateForm("state", e.target.value)}
       />
       <br />
@@ -65,7 +78,9 @@ const UserForm = ({
       <input
         type="text"
         aria-label="Zip Code"
+        disabled={usePrimaryData}
         aria-required="false"
+        placeholder={!usePrimaryData && "Five digits is fine."}
         value={zip}
         onChange={(e) => updateForm("zip", e.target.value)}
       />
@@ -83,20 +98,20 @@ const UserForm = ({
       >
         {wantToEnter
           ? `I don't want to enter data for ${fullName}`
-          : `Enter Data for ${fullName}`}
+          : `Enter info for ${fullName}`}
       </div>
       <br />
     </>
   );
   const handleUseMyInformationClick = (e) => {
     e.preventDefault();
-    fillWithPrimaryData();
+    toggleUsePrimaryData();
   };
 
   const useMyInformation = (
     <>
       <div className="button small" onClick={handleUseMyInformationClick}>
-        Use my information to fill this form
+        {usePrimaryData ? "Don't use my address" : "Use my address"}
       </div>
       <br />
     </>

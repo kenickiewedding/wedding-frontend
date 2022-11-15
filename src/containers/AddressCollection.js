@@ -36,43 +36,68 @@ const AddressCollection = ({ users, firstName, lastName }) => {
       state: "",
       zip: "",
       isPrimary,
-      wantToEnter: isPrimary
+      wantToEnter: isPrimary,
+      usePrimaryData: false
     })
   );
   const [formData, setFormData] = useState(getInitialState);
   const primaryFormData = formData.find((item) => item.isPrimary);
+
   const updateUserInForm = (index, key, val) => {
     const newForm = [...formData];
     newForm[index] = { ...newForm[index], [key]: val };
     setFormData(newForm);
   };
-  const fillWithPrimaryData = (index) => {
-    const newForm = [...formData];
-    const { addressLine1, addressLine2, city, state, zip } = newForm[0];
-    newForm[index] = {
-      ...newForm[index],
-      addressLine1,
-      addressLine2,
-      city,
-      state,
-      zip
-    };
-    setFormData(newForm);
+  const toggleUsePrimaryData = (index) => {
+    // const { addressLine1, addressLine2, city, state, zip } = newForm[0];
+    updateUserInForm(index, "usePrimaryData", !formData[index].usePrimaryData);
   };
-  const userToForm = (userData, i) => (
-    <UserForm
-      key={`${userData.firstName}${userData.lastName}`}
-      {...userData}
-      fillWithPrimaryData={() => fillWithPrimaryData(i)}
-      updateForm={(key, val) => updateUserInForm(i, key, val)}
-    />
-  );
+  const userToForm = (userData, i) => {
+    const {
+      firstName,
+      lastName,
+      email,
+      usePrimaryData,
+      wantToEnter,
+      isPrimary
+    } = userData;
+    const formData = userData.usePrimaryData
+      ? {
+          ...primaryFormData,
+          firstName,
+          lastName,
+          email,
+          usePrimaryData,
+          wantToEnter,
+          isPrimary
+        }
+      : userData;
+    return (
+      <UserForm
+        key={`${userData.firstName}${userData.lastName}`}
+        {...formData}
+        toggleUsePrimaryData={() => toggleUsePrimaryData(i)}
+        updateForm={(key, val) => updateUserInForm(i, key, val)}
+      />
+    );
+  };
 
   const moreThanOneUser = usersNeedingAddress.length > 1;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const usersToSubmit = formData.filter((user) => user.wantToEnter);
+    const usersToSubmit = formData
+      .filter((user) => user.wantToEnter)
+      .map((user) => {
+        if (user.usePrimaryData) {
+          const { addressLine1, addressLine2, city, state, zip } =
+            primaryFormData;
+          return { ...user, addressLine1, addressLine2, city, state, zip };
+        } else {
+          return user;
+        }
+      });
+
     createUsers(usersToSubmit);
   };
 
