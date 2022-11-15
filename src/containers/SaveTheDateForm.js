@@ -29,10 +29,16 @@ const SaveTheDateForm = () => {
 
   return (
     <>
-      <h1>Let us know how to reach you!</h1>
-      <SaveTheDateImage />
-      <p>Kirsten & Nicky</p>
-      <p>Would like to know how to reach you!</p>
+      <h1>Hi!</h1>
+      <div className="explainer">
+        <p>
+          As we get ready for this wedding, we'd love to know how to reach you!
+        </p>
+        <p>
+          Fill out the below form and we'll keep you in the loop for the
+          wedding.
+        </p>
+      </div>
       {users.some((user) => user) ? (
         <AddressCollection
           users={users}
