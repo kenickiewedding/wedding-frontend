@@ -5,10 +5,14 @@ import { useState } from "react";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
-  return authenticated || true ? (
-    <AuthenticatedApp />
-  ) : (
-    <UnauthenticatedApp setAuthenticated={setAuthenticated} />
+  return (
+    <div className="main">
+      {authenticated || true ? (
+        <AuthenticatedApp />
+      ) : (
+        <UnauthenticatedApp setAuthenticated={setAuthenticated} />
+      )}
+    </div>
   );
 }
 

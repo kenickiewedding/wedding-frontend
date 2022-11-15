@@ -11,7 +11,7 @@ const SaveTheDateLanding = ({ openForm }) => (
     <p>New York, NY</p>
     <p>~</p>
     <p>Please confirm your contact information:</p>
-    <button onClick={openForm}>Let Us Know How To Reach You!</button>
+    <button onClick={openForm}>Click here!</button>
   </>
 );
 

@@ -1,11 +1,12 @@
 import logo from "../logo.svg";
 import "../App.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import waterfall from "../assets/images/waterfall-peace.jpg";
 
 function Home() {
+  const navigate = useNavigate();
   return (
-    <main class="home">
+    <main className="home">
       <img
         src={waterfall}
         alt="Nicky and Kirsten sitting on a Waterfall flashing a Peace Sign"
@@ -14,7 +15,9 @@ function Home() {
       <p>Hill Country Barbecue Market</p>
       <p>30 W 26th St, New York, NY 10010</p>
       <p></p>
-      <Link path="address-collection">Share Your Address</Link>
+      <button onClick={() => navigate("/save-the-date")}>
+        Share Your Address
+      </button>
     </main>
   );
 }

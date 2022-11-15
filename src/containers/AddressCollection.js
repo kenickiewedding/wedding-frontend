@@ -81,7 +81,7 @@ const AddressCollection = ({ users, firstName, lastName }) => {
       <form onSubmit={handleSubmit}>
         {userToForm(formData[0], 0)}
         {moreThanOneUser && (
-          <h1>Would you like to enter information for any of these people?</h1>
+          <p>Would you like to enter information for any of these people?</p>
         )}
         {formData
           .slice(1, formData.length)
