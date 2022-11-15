@@ -72,6 +72,12 @@ main {
   /* font-size: 8em; */
   margin: 0em;
 }
+
+img.save-the-date {
+  width: 100%;
+  max-height: 40vh;
+  object-fit: contain;
+}
 /* 
 
 .name > * {
