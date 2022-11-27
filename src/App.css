@@ -10,14 +10,14 @@ body {
   max-width: 768px;
   height: 100%;
   min-height: 100vh;
-  background-color: #C8D8EB;
+  background-color: #c8d8eb;
 }
 
 a {
-  color: #824670
+  color: #824670;
 }
 a:visited {
-  color: #A2708A;
+  color: #a2708a;
 }
 
 .peace-background {
@@ -34,7 +34,6 @@ a:visited {
   /* justify-content: center; */
   /* width: 100%; */
 }
-
 
 /* .home {
   background-color: black;
@@ -78,6 +77,10 @@ main {
   height: 4em;
   border-bottom: 2px dotted #143642;
 }
+
+#password {
+  padding-top: 0.25em;
+}
 .navbar a {
   display: flex;
   justify-content: space-around;
@@ -114,7 +117,7 @@ textarea,
 select,
 button {
   font-size: 1.2em;
-  line-height: 1.2em
+  line-height: 1.2em;
 }
 /* 
 
@@ -158,8 +161,8 @@ input[type="submit"] {
   text-decoration: none;
   display: inline-block;
   font-size: 1.2em;
-  margin-top: .5em;
-  margin-bottom: .5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 .button.small {
@@ -176,8 +179,8 @@ textarea {
   border: 1px solid;
 }
 
-input::placeholder{
-  font-size: .8em;
+input::placeholder {
+  font-size: 0.8em;
 }
 
 .form-user h1 {
@@ -187,10 +190,9 @@ input::placeholder{
 
 .explainer {
   padding-top: 1em;
-  margin: 0 auto; 
+  margin: 0 auto;
   max-width: 400px;
 }
-
 
 @font-face {
   font-family: grenadierNF;

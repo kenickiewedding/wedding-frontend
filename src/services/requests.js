@@ -8,7 +8,7 @@ const keyTransform = ({
   addressLine2: address_line_2,
   city,
   state,
-  zip
+  zip,
 }) => {
   return {
     first_name,
@@ -18,7 +18,7 @@ const keyTransform = ({
     address_line_2,
     city,
     state,
-    zip
+    zip,
   };
 };
 
@@ -39,8 +39,17 @@ export const createUsers = (users) => {
   return fetch(API + `/users`, {
     method: "POST", // or 'PUT'
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify({ users })
+    body: JSON.stringify({ users }),
   }).then((res) => res.json());
 };
+
+export const login = (password) =>
+  fetch(API + `/password`, {
+    method: "POST", // or 'PUT'
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ password }),
+  }).then((res) => res.json());

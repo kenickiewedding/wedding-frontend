@@ -1,4 +1,3 @@
-import SaveTheDateImage from "../components/SaveTheDateImage";
 import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import GetUserForm from "../components/GetUserForm";

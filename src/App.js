@@ -7,7 +7,7 @@ function App() {
   const [authenticated, setAuthenticated] = useState(false);
   return (
     <div className="main">
-      {authenticated || true ? (
+      {authenticated ? (
         <AuthenticatedApp />
       ) : (
         <UnauthenticatedApp setAuthenticated={setAuthenticated} />
