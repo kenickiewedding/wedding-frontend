@@ -53,3 +53,7 @@ export const login = (password) =>
     },
     body: JSON.stringify({ password }),
   }).then((res) => res.json());
+
+export const ping = () => {
+  fetch(API + `/ping`);
+};
