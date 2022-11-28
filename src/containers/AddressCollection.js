@@ -11,7 +11,7 @@ const AddressCollection = ({ users, firstName, lastName }) => {
   };
   const totalUsers = users.map((user) => ({
     ...user,
-    isPrimary: isPrimary(user)
+    isPrimary: isPrimary(user),
   }));
   const usersNeedingAddress = totalUsers.filter((user) => user.addressNeeded);
   const showTheForm = usersNeedingAddress.some((user) => user);
@@ -21,7 +21,9 @@ const AddressCollection = ({ users, firstName, lastName }) => {
   ) {
     usersNeedingAddress[0].isPrimary = true;
   }
-  const primaryUser = usersNeedingAddress.find((user) => user.isPrimary);
+  const primaryUser =
+    usersNeedingAddress.find((user) => user.isPrimary) ||
+    totalUsers.find((user) => user.isPrimary);
   const nonPrimaryUsers = usersNeedingAddress
     .filter((user) => !user.isPrimary)
     .sort((a, b) => a.firstName.localeCompare(b.firstName));
@@ -37,7 +39,7 @@ const AddressCollection = ({ users, firstName, lastName }) => {
       zip: "",
       isPrimary,
       wantToEnter: isPrimary,
-      usePrimaryData: false
+      usePrimaryData: false,
     })
   );
   const [formData, setFormData] = useState(getInitialState);
@@ -59,7 +61,7 @@ const AddressCollection = ({ users, firstName, lastName }) => {
       email,
       usePrimaryData,
       wantToEnter,
-      isPrimary
+      isPrimary,
     } = userData;
     const formData = userData.usePrimaryData
       ? {
@@ -69,7 +71,7 @@ const AddressCollection = ({ users, firstName, lastName }) => {
           email,
           usePrimaryData,
           wantToEnter,
-          isPrimary
+          isPrimary,
         }
       : userData;
     return (
@@ -101,6 +103,20 @@ const AddressCollection = ({ users, firstName, lastName }) => {
     createUsers(usersToSubmit);
   };
 
+  // const userNamesToList = () => {
+  //   const userNames = users.map((user) => `${user.firstName} ${user.lastName}`);
+  //   if (users.length > 2) {
+  //     return (
+  //       userNames.slice(0, userNames.length - 1).join(", ") +
+  //       `, and ${userNames[userNames.length - 1]}`
+  //     );
+  //   } else if (users.length == 2) {
+  //     return userNames.join(" and ");
+  //   } else {
+  //     return userNames[0];
+  //   }
+  // };
+
   if (showTheForm) {
     return (
       <form onSubmit={handleSubmit}>
@@ -115,7 +131,17 @@ const AddressCollection = ({ users, firstName, lastName }) => {
       </form>
     );
   } else {
-    return <></>;
+    return (
+      <div class="thanks-but-no-thanks">
+        <h2>
+          Thanks, {primaryUser.firstName}!<br />
+        </h2>
+        <h3>
+          We already have everything we need to get in touch with you. Remember
+          to save the date!
+        </h3>
+      </div>
+    );
   }
 };
 
