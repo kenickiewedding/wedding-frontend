@@ -143,7 +143,7 @@ const AddressCollection = ({ users, firstName, lastName }) => {
     );
   } else {
     return (
-      <div class="thanks-but-no-thanks">
+      <div className="thanks-but-no-thanks">
         <h2>
           Thanks, {primaryUser.firstName}!<br />
         </h2>
