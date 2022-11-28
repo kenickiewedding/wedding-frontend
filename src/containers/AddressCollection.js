@@ -1,10 +1,8 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import UserForm from "../components/UserForm";
 import { createUsers } from "../services/requests";
 
 const AddressCollection = ({ users, firstName, lastName }) => {
-  const navigate = useNavigate();
   const [completed, setCompleted] = useState(false);
   const isPrimary = (user) => {
     return (

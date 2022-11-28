@@ -1,8 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { login } from "../services/requests";
 
 const UnauthenticatedApp = ({ setAuthenticated }) => {
-  const [password, setPassword] = useState("");
+  const [searchParams] = useSearchParams();
+  const initialPassword = searchParams.get("password") || "";
+  const [password, setPassword] = useState(initialPassword);
+  useEffect(() => {
+    initialPassword && onSubmit({ preventDefault: () => {} });
+  }, []);
+
   const onSubmit = (e) => {
     e.preventDefault();
     login(password).then((res) =>
