@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import UserForm from "../components/UserForm";
 import { createUsers } from "../services/requests";
 
 const AddressCollection = ({ users, firstName, lastName }) => {
+  const navigate = useNavigate();
+  const [completed, setCompleted] = useState(false);
   const isPrimary = (user) => {
     return (
       user.firstName.toUpperCase() === firstName.toUpperCase() &&
@@ -100,7 +103,15 @@ const AddressCollection = ({ users, firstName, lastName }) => {
         }
       });
 
-    createUsers(usersToSubmit);
+    createUsers(usersToSubmit).then((res) => {
+      if (res[0].id) {
+        setCompleted(true);
+      } else {
+        alert(
+          "Uh oh! Something went wrong! Notify Nicky and let him know he screwed up big time."
+        );
+      }
+    });
   };
 
   // const userNamesToList = () => {
@@ -117,7 +128,7 @@ const AddressCollection = ({ users, firstName, lastName }) => {
   //   }
   // };
 
-  if (showTheForm) {
+  if (showTheForm && !completed) {
     return (
       <form onSubmit={handleSubmit}>
         {userToForm(formData[0], 0)}
@@ -137,8 +148,8 @@ const AddressCollection = ({ users, firstName, lastName }) => {
           Thanks, {primaryUser.firstName}!<br />
         </h2>
         <h3>
-          We already have everything we need to get in touch with you. Remember
-          to save the date!
+          We have everything we need to get in touch with you. Remember to save
+          the date!
         </h3>
       </div>
     );
