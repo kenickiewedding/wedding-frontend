@@ -172,36 +172,6 @@ button {
   padding: 0.5em 2em;
   border-radius: 1em;
 }
-/* 
-
-.name > * {
-  margin: 0em;
-}
-
-.name > :first-child {
-  text-align: left;
-}
-
-.name > :nth-child(2) {
-  text-align: center;
-  font-size: 0.5em;
-}
-
-.name > :nth-child(3) {
-  text-align: right;
-}
-
-.overlay {
-  background: rgba(50, 70, 80, 0.7);
-  overflow: hidden;
-  height: 100%;
-}
-
-#date {
-  font-family: grenadierNF;
-  font-size: 4em;
-  color: white;
-} */
 
 button,
 .button,
@@ -215,7 +185,7 @@ input[type="submit"] {
   text-decoration: none;
   display: inline-block;
   font-size: 1em;
-  margin-top: 0.5em;
+  margin-top: 1em;
   margin-bottom: 0.5em;
   border-radius: 12px;
   cursor: pointer;
