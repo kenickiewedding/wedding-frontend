@@ -28,10 +28,6 @@ const SaveTheDateForm = () => {
 
   return (
     <>
-      <div className="explainer">
-        We'd love to know how to reach you! Let us know how to contact you and
-        your party so we can shoot you save the dates and keep you in the loop.
-      </div>
       {users.some((user) => user) ? (
         <AddressCollection
           users={users}

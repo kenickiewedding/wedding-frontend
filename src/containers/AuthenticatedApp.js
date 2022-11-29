@@ -6,12 +6,16 @@ import KirstenAndNicky from "../components/KirstenAndNicky";
 
 export const AuthenticatedApp = () => (
   <>
-    <KirstenAndNicky />
-    <Navbar />
-    <Routes>
-      <Route index element={<Home />} />
-      <Route path="/save-the-date" element={<SaveTheDateContainer />} />
-    </Routes>
+    <header>
+      <KirstenAndNicky />
+      {/* <Navbar /> */}
+    </header>
+    <main>
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="/save-the-date" element={<SaveTheDateContainer />} />
+      </Routes>
+    </main>
   </>
 );
 
