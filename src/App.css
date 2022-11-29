@@ -35,7 +35,7 @@ p {
 p#date, 
 p#address {
   font-family: shockwave;
-  font-size: 5em;
+  font-size: 4em;
 }
 
 @media only screen and (max-width: 600px) {

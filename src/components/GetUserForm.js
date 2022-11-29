@@ -1,5 +1,3 @@
-import { useNavigate } from "react-router-dom";
-
 const GetUserForm = ({
   setFirstName,
   setLastName,
@@ -7,7 +5,6 @@ const GetUserForm = ({
   firstName,
   lastName
 }) => {
-  const navigate = useNavigate();
   return (
     <form
       onSubmit={(e) => {
