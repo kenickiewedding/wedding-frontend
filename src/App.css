@@ -32,8 +32,7 @@ p {
   margin: 0 auto;
 }
 
-p#date, 
-p#address {
+p#date {
   font-family: shockwave;
   font-size: 4em;
 }
