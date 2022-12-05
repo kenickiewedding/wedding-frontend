@@ -1,6 +1,8 @@
+import names from "../assets/images/names.png";
+import Divider from "./Divider";
 const KirstenAndNicky = () => (
   <div className="kirsten-and-nicky-header">
-    <div className="name">Kirsten & Nicky</div>
+    <img src={names} alt="KIRSTEN AND NICKY" id="kirsten-and-nicky" />
   </div>
 );
 

@@ -1,10 +1,18 @@
-import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const { pathname } = useLocation();
+  const [showNav, setShowNav] = useState("false");
+  const className = showNav ? "show navbar" : "navbar";
   return (
-    <div className="navbar">
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/save-the-date">Let Us Know How To Reach You</NavLink>
+    <div className={className}>
+      <Link exact to="/" className={pathname === "/" && "active"}>
+        Home
+      </Link>
+      <NavLink to="/save-the-date">Share Your Contact Info</NavLink>
+      <NavLink to="/FAQ">FAQ</NavLink>
+      <NavLink to="/Travel">Travel</NavLink>
     </div>
   );
 };

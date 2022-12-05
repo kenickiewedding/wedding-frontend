@@ -3,12 +3,14 @@ import Home from "./Home";
 import Navbar from "./Navbar";
 import SaveTheDateContainer from "./SaveTheDateContainer";
 import KirstenAndNicky from "../components/KirstenAndNicky";
+import Divider from "../components/Divider";
 
 export const AuthenticatedApp = () => (
   <>
     <header>
       <KirstenAndNicky />
-      {/* <Navbar /> */}
+      <Navbar />
+      <Divider />
     </header>
     <main>
       <Routes>

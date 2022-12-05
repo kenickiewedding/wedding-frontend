@@ -9,6 +9,17 @@
   --button: #749a83;
 }
 
+#kirsten-and-nicky {
+  max-height: 4em;
+  max-width: 80vw;
+}
+
+.divider {
+  max-height: 0.8em;
+  max-width: 80vw;
+  margin: 0.5em auto;
+}
+
 header {
   position: sticky;
   top: 0;
@@ -54,6 +65,8 @@ p#date {
   height: 100%;
   width: 100%;
   min-height: 100vh;
+  text-align: center;
+  padding-bottom: 3em;
 }
 
 a {
@@ -85,14 +98,6 @@ a:visited {
 .home > img {
   width: 100%;
 }
-
-main {
-  text-align: center;
-  padding-bottom: 6em;
-  /* padding: 3em; */
-  /* border: solid white 1px; */
-  /* width: 1000px; */
-}
 .name {
   color: var(--font);
   font-family: buckwheat-rough;
@@ -116,24 +121,22 @@ main {
 
 .navbar {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  height: 4em;
-  border-bottom: 2px dotted var(--font);
+  font-size: 0.8em;
+  margin: 0.5em auto 0.25em auto;
 }
 
 #password {
   padding-top: 0.25em;
 }
+
 .navbar a {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
+  padding: 0 1em;
 }
 
-.navbar a:not(:first-child) {
-  border-left: 2px dotted var(--font);
+.navbar .active {
+  color: var(--dark-blue);
 }
 
 img.save-the-date {
@@ -161,8 +164,8 @@ textarea,
 select,
 button {
   font-family: bryant;
-  /* font-size: 1.2em; */
-  /* line-height: 1.2em; */
+  font-size: 1em;
+  line-height: 1em;
 }
 
 .thanks-but-no-thanks {
