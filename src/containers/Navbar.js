@@ -10,6 +10,7 @@ const Navbar = () => {
   const toggleNav = () => setShowNav(!showNav);
   return (
     <div className="navbar-container">
+      <FontAwesomeIcon icon={faBars} onClick={toggleNav} />
       <div className={className}>
         <Link exact to="/" className={pathname === "/" && "active"}>
           Home
@@ -18,7 +19,6 @@ const Navbar = () => {
         <NavLink to="/FAQ">FAQ</NavLink>
         <NavLink to="/Travel">Travel</NavLink>
       </div>
-      <FontAwesomeIcon icon={faBars} onClick={toggleNav} />
     </div>
   );
 };
