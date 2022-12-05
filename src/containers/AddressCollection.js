@@ -12,7 +12,7 @@ const AddressCollection = ({ users, firstName, lastName }) => {
   };
   const totalUsers = users.map((user) => ({
     ...user,
-    isPrimary: isPrimary(user),
+    isPrimary: isPrimary(user)
   }));
   const usersNeedingAddress = totalUsers.filter((user) => user.addressNeeded);
   const showTheForm = usersNeedingAddress.some((user) => user);
@@ -40,7 +40,7 @@ const AddressCollection = ({ users, firstName, lastName }) => {
       zip: "",
       isPrimary,
       wantToEnter: isPrimary,
-      usePrimaryData: false,
+      usePrimaryData: false
     })
   );
   const [formData, setFormData] = useState(getInitialState);
@@ -62,7 +62,7 @@ const AddressCollection = ({ users, firstName, lastName }) => {
       email,
       usePrimaryData,
       wantToEnter,
-      isPrimary,
+      isPrimary
     } = userData;
     const formData = userData.usePrimaryData
       ? {
@@ -72,7 +72,7 @@ const AddressCollection = ({ users, firstName, lastName }) => {
           email,
           usePrimaryData,
           wantToEnter,
-          isPrimary,
+          isPrimary
         }
       : userData;
     return (
@@ -128,16 +128,23 @@ const AddressCollection = ({ users, firstName, lastName }) => {
 
   if (showTheForm && !completed) {
     return (
-      <form onSubmit={handleSubmit}>
-        {userToForm(formData[0], 0)}
-        {moreThanOneUser && (
-          <p>Would you like to enter information for any of these people?</p>
-        )}
-        {formData
-          .slice(1, formData.length)
-          .map((user, i) => userToForm(user, i + 1))}
-        <input type="submit" value="Submit!" />
-      </form>
+      <>
+        <div className="explainer">
+          We'd love to know how to reach you! Let us know how to contact you and
+          your party so we can shoot you save the dates and keep you in the
+          loop.
+        </div>
+        <form onSubmit={handleSubmit}>
+          {userToForm(formData[0], 0)}
+          {moreThanOneUser && (
+            <p>Would you like to enter information for any of these people?</p>
+          )}
+          {formData
+            .slice(1, formData.length)
+            .map((user, i) => userToForm(user, i + 1))}
+          <input type="submit" value="Submit!" />
+        </form>
+      </>
     );
   } else if (!showTheForm) {
     return (

@@ -22,7 +22,7 @@ const UnauthenticatedApp = ({ setAuthenticated }) => {
         Enter the Password:
         <input
           type="text"
-          placeholder={"Give it your best shot, hackerman"}
+          placeholder={"Pop quiz, hotshot"}
           value={password}
           aria-label="password"
           aria-required="true"

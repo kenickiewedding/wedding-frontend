@@ -1,23 +1,65 @@
+:root {
+  --background: #c8d8eb;
+  --font: #143642;
+  --link: #824670;
+  --visited: #a2708a;
+  --button: #9f9f9f;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  opacity: 1;
+  background-color: var(--background)
+}
+
+
 body {
-  color: #143642;
+  color: var(--font);
   text-align: center;
-  background: url("./assets/images/waterfall-peace.jpg") no-repeat fixed;
+  font-family: poppins;
+  background-color: var(--background);
+  background: url("https://t4.ftcdn.net/jpg/00/70/36/51/360_F_70365188_TnkU0lsl9BXgC5GBv4ALpXyKo9mVgJJ0.jpg") ;
   box-sizing: border-box;
 }
 
+p {
+  /* font-size: 2em; */
+  /* font-family: ombres; */
+  /* color: hotpink; */
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+p#date {
+  font-family: shockwave;
+  font-size: 4em;
+}
+
+@media only screen and (max-width: 600px) {
+  p#date, 
+p#address {
+  font-family: shockwave;
+  font-size: 3em;
+}
+}
+
+
 .main {
   margin: 0 auto;
-  max-width: 768px;
+  /* max-width: 768px; */
   height: 100%;
+  width: 100%;
   min-height: 100vh;
-  background-color: #c8d8eb;
+  background-image: linear-gradient(to bottom right, var(--background), rgb(201, 215, 232));
 }
 
 a {
-  color: #824670;
+  color: var(--link);
 }
 a:visited {
-  color: #a2708a;
+  color: var(--visited);
 }
 
 .peace-background {
@@ -51,10 +93,10 @@ main {
   /* width: 1000px; */
 }
 .name {
-  color: #143642;
+  color: var(--font);
   font-family: shockwave;
   font-size: 5em;
-  border-bottom: 2px dotted #143642;
+  /* border-bottom: 2px dotted var(--font); */
 }
 
 .kirsten-and-nicky-header {
@@ -76,7 +118,7 @@ main {
   justify-content: space-around;
   align-items: center;
   height: 4em;
-  border-bottom: 2px dotted #143642;
+  border-bottom: 2px dotted var(--font);
 }
 
 #password {
@@ -90,7 +132,7 @@ main {
 }
 
 .navbar a:not(:first-child) {
-  border-left: 2px dotted #143642;
+  border-left: 2px dotted var(--font);
 }
 
 img.save-the-date {
@@ -124,60 +166,33 @@ button {
 .thanks-but-no-thanks {
   max-width: 400px;
   margin: 2em auto;
-  background: #143642;
-  color: #c8d8eb;
+  background: var(--font);
+  color: var(--background);
   padding: 0.5em 2em;
   border-radius: 1em;
 }
-/* 
-
-.name > * {
-  margin: 0em;
-}
-
-.name > :first-child {
-  text-align: left;
-}
-
-.name > :nth-child(2) {
-  text-align: center;
-  font-size: 0.5em;
-}
-
-.name > :nth-child(3) {
-  text-align: right;
-}
-
-.overlay {
-  background: rgba(50, 70, 80, 0.7);
-  overflow: hidden;
-  height: 100%;
-}
-
-#date {
-  font-family: grenadierNF;
-  font-size: 4em;
-  color: white;
-} */
 
 button,
 .button,
 input[type="submit"] {
-  background-color: #4caf50; /* Green */
-  border: none;
-  color: white;
+  background-color: var(--background);
+  border: solid var(--font) 2px;
+  /* color: white; */
+  /* background-color:  */
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 1.2em;
-  margin-top: 0.5em;
+  font-size: 1em;
+  margin-top: 1em;
   margin-bottom: 0.5em;
+  border-radius: 12px;
+  cursor: pointer;
 }
 
 .button.small {
   font-size: 1em;
-  background-color: #143642;
+  background-color: var(--font);
   color: white;
   max-width: 200px;
 }
@@ -195,13 +210,18 @@ input::placeholder {
 
 .form-user h1 {
   font-size: 1.5em;
-  color: #143642;
+  color: var(--font);
 }
 
 .explainer {
   padding-top: 1em;
   margin: 0 auto;
   max-width: 400px;
+}
+
+@font-face {
+  font-family: poppins;
+  src: url("./assets/fonts/Poppins-Medium.ttf")
 }
 
 @font-face {
