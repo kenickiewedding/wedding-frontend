@@ -1,9 +1,12 @@
 :root {
-  --background: #c8d8eb;
-  --font: #143642;
-  --link: #824670;
-  --visited: #a2708a;
-  --button: #9f9f9f;
+  --background: #dbe0e5;
+  --powder-blue: #84a4c5;
+  --sage-green: #749a83;
+  --dark-blue: #2b608e;
+  --font: #2b608e;
+  --link: #749a83;
+  --visited: #749a83;
+  --button: #749a83;
 }
 
 header {
@@ -11,16 +14,15 @@ header {
   top: 0;
   width: 100%;
   opacity: 1;
-  background-color: var(--background)
+  background-color: var(--background);
 }
-
 
 body {
   color: var(--font);
   text-align: center;
   font-family: poppins;
   background-color: var(--background);
-  background: url("https://t4.ftcdn.net/jpg/00/70/36/51/360_F_70365188_TnkU0lsl9BXgC5GBv4ALpXyKo9mVgJJ0.jpg") ;
+  /* background: url("https://t4.ftcdn.net/jpg/00/70/36/51/360_F_70365188_TnkU0lsl9BXgC5GBv4ALpXyKo9mVgJJ0.jpg"); */
   box-sizing: border-box;
 }
 
@@ -38,13 +40,12 @@ p#date {
 }
 
 @media only screen and (max-width: 600px) {
-  p#date, 
-p#address {
-  font-family: shockwave;
-  font-size: 3em;
+  p#date,
+  p#address {
+    font-family: shockwave;
+    font-size: 3em;
+  }
 }
-}
-
 
 .main {
   margin: 0 auto;
@@ -52,7 +53,6 @@ p#address {
   height: 100%;
   width: 100%;
   min-height: 100vh;
-  background-image: linear-gradient(to bottom right, var(--background), rgb(201, 215, 232));
 }
 
 a {
@@ -221,7 +221,7 @@ input::placeholder {
 
 @font-face {
   font-family: poppins;
-  src: url("./assets/fonts/Poppins-Medium.ttf")
+  src: url("./assets/fonts/Poppins-Medium.ttf");
 }
 
 @font-face {
