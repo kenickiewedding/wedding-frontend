@@ -12,7 +12,7 @@ const Navbar = () => {
     <div className="navbar-container">
       <FontAwesomeIcon icon={faBars} onClick={toggleNav} />
       <div className={className}>
-        <Link exact to="/" className={pathname === "/" && "active"}>
+        <Link to="/" className={pathname === "/" ? "active" : ""}>
           Home
         </Link>
         <NavLink to="/save-the-date">Share Your Contact Info</NavLink>
