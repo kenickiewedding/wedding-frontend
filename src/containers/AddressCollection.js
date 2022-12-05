@@ -139,6 +139,20 @@ const AddressCollection = ({ users, firstName, lastName }) => {
         <input type="submit" value="Submit!" />
       </form>
     );
+  } else if (!showTheForm) {
+    return (
+      <div className="thanks-but-no-thanks">
+        <h2>Thanks, {primaryUser.firstName}!</h2>
+        <h3>
+          We already have your address on file! You can expect your invitation
+          and RSVP information in early January.
+          <br />
+          <br />
+          Please save the date! We look forward to celebrating with you on April
+          1, 2023.
+        </h3>
+      </div>
+    );
   } else {
     return (
       <div className="thanks-but-no-thanks">
