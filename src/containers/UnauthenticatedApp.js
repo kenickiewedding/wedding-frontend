@@ -19,7 +19,7 @@ const UnauthenticatedApp = ({ setAuthenticated }) => {
   return (
     <form onSubmit={onSubmit} id="password">
       <label>
-        Enter the Password:
+        Please enter the password:
         <input
           type="text"
           placeholder={"Pop quiz, hotshot"}

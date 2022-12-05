@@ -12,7 +12,7 @@ const AddressCollection = ({ users, firstName, lastName }) => {
   };
   const totalUsers = users.map((user) => ({
     ...user,
-    isPrimary: isPrimary(user)
+    isPrimary: isPrimary(user),
   }));
   const usersNeedingAddress = totalUsers.filter((user) => user.addressNeeded);
   const showTheForm = usersNeedingAddress.some((user) => user);
@@ -40,7 +40,7 @@ const AddressCollection = ({ users, firstName, lastName }) => {
       zip: "",
       isPrimary,
       wantToEnter: isPrimary,
-      usePrimaryData: false
+      usePrimaryData: false,
     })
   );
   const [formData, setFormData] = useState(getInitialState);
@@ -62,7 +62,7 @@ const AddressCollection = ({ users, firstName, lastName }) => {
       email,
       usePrimaryData,
       wantToEnter,
-      isPrimary
+      isPrimary,
     } = userData;
     const formData = userData.usePrimaryData
       ? {
@@ -72,7 +72,7 @@ const AddressCollection = ({ users, firstName, lastName }) => {
           email,
           usePrimaryData,
           wantToEnter,
-          isPrimary
+          isPrimary,
         }
       : userData;
     return (
@@ -130,9 +130,9 @@ const AddressCollection = ({ users, firstName, lastName }) => {
     return (
       <>
         <div className="explainer">
-          We'd love to know how to reach you! Let us know how to contact you and
-          your party so we can shoot you save the dates and keep you in the
-          loop.
+          We’d love to know how best to reach you! Kindly share your address and
+          email so we can send your formal invitation and keep you updated with
+          all of the latest wedding news.
         </div>
         <form onSubmit={handleSubmit}>
           {userToForm(formData[0], 0)}
@@ -164,11 +164,14 @@ const AddressCollection = ({ users, firstName, lastName }) => {
     return (
       <div className="thanks-but-no-thanks">
         <h2>
-          Thanks, {primaryUser.firstName}!<br />
+          Thanks for sharing your contact details, {primaryUser.firstName}!
         </h2>
         <h3>
-          We have everything we need to get in touch with you. Remember to save
-          the date!
+          You can expect your invitation and RSVP information in early January.
+          <br />
+          <br />
+          Please save the date! We look forward to celebrating with you on April
+          1, 2023.
         </h3>
       </div>
     );
