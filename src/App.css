@@ -203,10 +203,7 @@ form {
 label,
 input,
 textarea,
-select,
-button,
-.button,
-input[type="submit"] {
+select {
   font-family: bryant;
   font-size: 1em;
   line-height: 1em;
@@ -232,10 +229,11 @@ input[type="submit"] {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 1em;
+  font-size: .8em;
   margin-top: 1em;
   margin-bottom: 0.5em;
   border-radius: 12px;
+  font-family: bryant;
   cursor: pointer;
   white-space: normal;
   word-wrap: break-word;
