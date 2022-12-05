@@ -229,7 +229,7 @@ input[type="submit"] {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: .8em;
+  font-size: 0.8em;
   margin-top: 1em;
   margin-bottom: 0.5em;
   border-radius: 12px;
@@ -267,6 +267,16 @@ input::placeholder {
   padding-top: 1em;
   margin: 0 auto;
   max-width: 400px;
+}
+
+.work-in-progress h1 {
+  font-family: buckwheat;
+  font-size: 1.5em;
+}
+
+.work-in-progress img {
+  max-height: 600px;
+  max-width: 100vw;
 }
 
 @font-face {
