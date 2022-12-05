@@ -20,8 +20,9 @@ header {
 body {
   color: var(--font);
   text-align: center;
-  font-family: poppins;
+  font-family: bryant;
   background-color: var(--background);
+  font-size: 28px;
   /* background: url("https://t4.ftcdn.net/jpg/00/70/36/51/360_F_70365188_TnkU0lsl9BXgC5GBv4ALpXyKo9mVgJJ0.jpg"); */
   box-sizing: border-box;
 }
@@ -35,15 +36,15 @@ p {
 }
 
 p#date {
-  font-family: shockwave;
-  font-size: 4em;
+  font-family: buckwheat-rough;
+  font-size: 2em;
 }
 
 @media only screen and (max-width: 600px) {
   p#date,
   p#address {
-    font-family: shockwave;
-    font-size: 3em;
+    font-family: buckwheat-rough;
+    font-size: 1.5em;
   }
 }
 
@@ -94,7 +95,7 @@ main {
 }
 .name {
   color: var(--font);
-  font-family: shockwave;
+  font-family: buckwheat-rough;
   font-size: 5em;
   /* border-bottom: 2px dotted var(--font); */
 }
@@ -159,8 +160,9 @@ input,
 textarea,
 select,
 button {
-  font-size: 1.2em;
-  line-height: 1.2em;
+  font-family: bryant;
+  /* font-size: 1.2em; */
+  /* line-height: 1.2em; */
 }
 
 .thanks-but-no-thanks {
@@ -224,7 +226,7 @@ input::placeholder {
   src: url("./assets/fonts/Poppins-Medium.ttf");
 }
 
-@font-face {
+/* @font-face {
   font-family: grenadierNF;
   src: url("./assets/fonts/GrenadierNF.ttf");
 }
@@ -247,4 +249,24 @@ input::placeholder {
 @font-face {
   font-family: shockwave;
   src: url("./assets/fonts/Shockwave.ttf");
+} */
+
+@font-face {
+  font-family: buckwheat-rough;
+  src: url("./assets/fonts/Buckwheat\ TC\ Rough.otf");
+}
+
+@font-face {
+  font-family: buckwheat;
+  src: url("./assets/fonts/Buckwheat\ TC\ Rg.otf");
+}
+
+@font-face {
+  font-family: bryant;
+  src: url("./assets/fonts/Bryant-Medium.otf");
+}
+
+@font-face {
+  font-family: gotham;
+  src: url("./assets/fonts/Gotham-Medium.otf");
 }
