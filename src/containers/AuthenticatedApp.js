@@ -11,7 +11,6 @@ export const AuthenticatedApp = () => (
     <header>
       <KirstenAndNicky />
       <Navbar />
-      <Divider />
     </header>
     <main>
       <Routes>

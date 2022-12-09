@@ -1,10 +1,6 @@
 import "../App.css";
-import {
-  createSearchParams,
-  useNavigate,
-  useSearchParams
-} from "react-router-dom";
-import waterfall from "../assets/images/waterfall-peace.jpg";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import croppedHorizontal from "../assets/images/47-cropped-horizontal.png";
 
 function Home() {
   const navigate = useNavigate();
@@ -12,8 +8,8 @@ function Home() {
   return (
     <main className="home">
       <img
-        src={waterfall}
-        alt="Nicky and Kirsten sitting on a Waterfall flashing a Peace Sign"
+        src={croppedHorizontal}
+        alt="Nicky and Kirsten under a willow tree"
       />
       <p id="date">April 1, 2023</p>
       <p>Hill Country Barbecue Market</p>
@@ -24,7 +20,7 @@ function Home() {
           searchParams.set("open", "true");
           navigate({
             pathname: "/save-the-date",
-            search: searchParams.toString()
+            search: searchParams.toString(),
           });
         }}
       >

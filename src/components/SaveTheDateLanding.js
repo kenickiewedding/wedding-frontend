@@ -1,10 +1,11 @@
-import croppedHorizontal from "../assets/images/47-cropped-horizontal.png";
+import waterfall from "../assets/images/waterfall-cropped.png";
+
 const SaveTheDateLanding = ({ openForm }) => (
   <div className="save-the-date-landing">
     <img
       className="save-the-date"
-      src={croppedHorizontal}
-      alt="Nicky and Kirsten under a willow tree"
+      src={waterfall}
+      alt="Nicky and Kirsten sitting on a Waterfall flashing a Peace Sign"
     />
     <p id="date">April 1, 2023</p>
     <p>Hill Country Barbecue Market</p>
