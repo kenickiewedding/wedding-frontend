@@ -3,8 +3,10 @@ import Home from "./Home";
 import Navbar from "./Navbar";
 import SaveTheDateContainer from "./SaveTheDateContainer";
 import KirstenAndNicky from "../components/KirstenAndNicky";
+import { Questions } from "../components/Questions";
 import Divider from "../components/Divider";
 import Wip from "../components/Wip";
+import { travelQuestions } from "../assets/text/travel";
 
 export const AuthenticatedApp = () => (
   <>
@@ -17,7 +19,12 @@ export const AuthenticatedApp = () => (
         <Route index element={<Home />} />
         <Route path="/save-the-date" element={<SaveTheDateContainer />} />
         <Route path="/FAQ" element={<Wip />} />
-        <Route path="/Travel" element={<Wip />} />
+        <Route
+          path="/Travel"
+          element={<Questions questions={travelQuestions} />}
+        />
+        <Route path="/Pictures" element={<Wip />} />
+        <Route path="/Registry" element={<Wip />} />
       </Routes>
     </main>
   </>

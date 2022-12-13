@@ -15,9 +15,11 @@ const Navbar = () => {
         <Link to="/" className={pathname === "/" ? "active" : ""}>
           Home
         </Link>
-        <NavLink to="/save-the-date">Share Your Contact Info</NavLink>
-        <NavLink to="/FAQ">FAQ</NavLink>
         <NavLink to="/Travel">Travel</NavLink>
+        <NavLink to="/Pictures">Pictures</NavLink>
+        <NavLink to="/Registry">Registry</NavLink>
+        <NavLink to="/FAQ">FAQ</NavLink>
+        <NavLink to="/save-the-date">Share Your Contact Info</NavLink>
       </div>
     </div>
   );
