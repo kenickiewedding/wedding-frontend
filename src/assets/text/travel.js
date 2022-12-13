@@ -4,7 +4,7 @@ export const travelQuestions = [
     question: "How do I get to New York City?",
     answerParagraphs: [
       "Practice.",
-      "Nicky and I typically travel through LaGuardia Airport, but John F. Kennedy International Airport and Newark Liberty International Airport are also good options.",
+      "We typically travel through LaGuardia Airport, but John F. Kennedy International Airport and Newark Liberty International Airport are also good options.",
       "If you’re coming from the East Coast, the venue is also located close to Penn Station and the shiny new (and irritatingly benchless) Moynihan Train Hall.",
     ],
   },

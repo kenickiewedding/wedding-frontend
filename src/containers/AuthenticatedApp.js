@@ -7,6 +7,7 @@ import { Questions } from "../components/Questions";
 import Divider from "../components/Divider";
 import Wip from "../components/Wip";
 import { travelQuestions } from "../assets/text/travel";
+import { FAQuestions } from "../assets/text/FAQ";
 
 export const AuthenticatedApp = () => (
   <>
@@ -18,7 +19,7 @@ export const AuthenticatedApp = () => (
       <Routes>
         <Route index element={<Home />} />
         <Route path="/save-the-date" element={<SaveTheDateContainer />} />
-        <Route path="/FAQ" element={<Wip />} />
+        <Route path="/FAQ" element={<Questions questions={FAQuestions} />} />
         <Route
           path="/Travel"
           element={<Questions questions={travelQuestions} />}
