@@ -224,6 +224,14 @@ select {
   border-radius: 1em;
 }
 
+.thanks-but-no-thanks h2 {
+  font-size: 0.9em;
+}
+
+.thanks-but-no-thanks h3 {
+  font-size: 0.7em;
+}
+
 button,
 .button,
 input[type="submit"] {
