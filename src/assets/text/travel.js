@@ -12,8 +12,10 @@ export const travelQuestions = [
     id: 2,
     question: "How do I get around once I’m there?",
     answerParagraphs: [
-      "New York City has some of the best public transportation in the world! It’s safe and easy to navigate the city by subway and bus. With the new OMNY system, you can pay at the subway turnstile or as you board the bus by tapping a credit card. Google Maps is a reliable source for finding the most efficient route to anywhere you want to go.",
-      "Taxi cabs are also plentiful! We recommend downloading the Curb app, which functions like Lyft or Uber but with NYC’s iconic yellow taxis. It will also allow you to pair your payment with a ride already in progress, allowing you to do the thing people in New York movies do where they pull up to a place in a taxi and immediately get out of the car.",
+      "New York City has some of the best public transportation in the world! It’s safe and easy to navigate the city by subway and bus.",
+      "With the new OMNY system, you can pay at the subway turnstile or as you board the bus by tapping a credit card. Google Maps is a reliable source for finding the most efficient route to anywhere you want to go.",
+      "Taxi cabs are also plentiful! We recommend downloading the Curb app, which functions like Lyft or Uber but with NYC’s iconic yellow taxis.",
+      "Curb will also allow you to pair your payment with a ride already in progress, allowing you to do the thing people in New York movies do where they pull up to a place in a taxi and immediately get out of the car.",
     ],
   },
   {

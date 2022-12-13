@@ -327,6 +327,29 @@ footer {
   width: 100px;
 }
 
+.questionContainer {
+  padding: 0 1em;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.question {
+  font-family: buckwheat;
+  margin-bottom: 0.8em;
+  font-size: 0.8em;
+}
+
+.answers {
+  font-family: gotham;
+  font-size: 0.5em;
+  line-height: 1.3em;
+  /* text-align: left; */
+}
+
+.answers p {
+  margin-bottom: 1em;
+}
+
 @font-face {
   font-family: poppins;
   src: url("./assets/fonts/Poppins-Medium.ttf");
