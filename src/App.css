@@ -58,7 +58,7 @@ p#date {
   height: 100%;
   width: 100%;
   min-height: 70vh;
-  max-height: 200vh;
+  /* max-height: 200vh; */
   text-align: center;
   padding-bottom: 3em;
 }
