@@ -2,15 +2,16 @@ import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import GetUserForm from "../components/GetUserForm";
 import { getFamilyUnit } from "../services/requests";
-import AddressCollection from "./AddressCollection";
 
-const SaveTheDateForm = () => {
+const FindUserForm = ({ ChildComponent, submitText, onComplete }) => {
   const [searchParams] = useSearchParams();
   const initialFirstName = searchParams.get("firstName") || "";
   const initialLastName = searchParams.get("lastName") || "";
   const [firstName, setFirstName] = useState(initialFirstName);
   const [lastName, setLastName] = useState(initialLastName);
   const [users, setUsers] = useState([]);
+  users.length > 0 && onComplete && onComplete();
+
   const getUsers = () => {
     firstName &&
       lastName &&
@@ -29,7 +30,7 @@ const SaveTheDateForm = () => {
   return (
     <>
       {users.some((user) => user) ? (
-        <AddressCollection
+        <ChildComponent
           users={users}
           firstName={firstName}
           lastName={lastName}
@@ -41,10 +42,11 @@ const SaveTheDateForm = () => {
           setFirstName={setFirstName}
           setLastName={setLastName}
           getUsers={getUsers}
+          submitText={submitText}
         />
       )}
     </>
   );
 };
 
-export default SaveTheDateForm;
+export default FindUserForm;

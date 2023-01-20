@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import SaveTheDateLanding from "../components/SaveTheDateLanding";
-import SaveTheDateForm from "./SaveTheDateForm";
+import FindUserForm from "./FindUserForm";
+import AddressCollection from "./AddressCollection";
 
 const SaveTheDateContainer = () => {
   const [searchParams] = useSearchParams();
@@ -10,7 +11,10 @@ const SaveTheDateContainer = () => {
   );
   const openForm = () => setFormOpened(true);
   return formOpened ? (
-    <SaveTheDateForm />
+    <FindUserForm
+      ChildComponent={AddressCollection}
+      submitText={"Let us know how to reach you!"}
+    />
   ) : (
     <SaveTheDateLanding openForm={openForm} />
   );

@@ -3,7 +3,8 @@ const GetUserForm = ({
   setLastName,
   getUsers,
   firstName,
-  lastName
+  lastName,
+  submitText
 }) => {
   return (
     <form
@@ -43,7 +44,7 @@ const GetUserForm = ({
           onChange={(e) => setLastName(e.target.value)}
         />
       </label>
-      <input type="submit" value="Let us know how to reach you!" />
+      <input type="submit" value={submitText} />
     </form>
   );
 };

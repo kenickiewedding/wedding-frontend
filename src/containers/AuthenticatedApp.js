@@ -8,6 +8,7 @@ import Divider from "../components/Divider";
 import Wip from "../components/Wip";
 import { travelQuestions } from "../assets/text/travel";
 import { FAQuestions } from "../assets/text/FAQ";
+import RsvpLandingPage from "../components/RsvpLandingPage.js";
 
 export const AuthenticatedApp = () => (
   <>
@@ -24,6 +25,7 @@ export const AuthenticatedApp = () => (
           path="/Travel"
           element={<Questions questions={travelQuestions} />}
         />
+        <Route path="/rsvp" element={<RsvpLandingPage />} />
         <Route path="/Pictures" element={<Wip />} />
         <Route path="/Registry" element={<Wip />} />
       </Routes>
