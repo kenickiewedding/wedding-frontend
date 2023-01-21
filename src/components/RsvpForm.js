@@ -3,7 +3,6 @@ import { rsvpUsers } from "../services/requests";
 import RsvpFormSection from "./RsvpFormSection";
 
 const RsvpForm = ({ users }) => {
-  console.log("users", users);
   const plusOnesAllowed = users.find((user) => user.plusOnesAllowed > 0);
   const extantPlusOne = users.find((user) => user.plusOne?.id)?.plusOne;
   const getInitialState = users.map(
@@ -72,14 +71,17 @@ const RsvpForm = ({ users }) => {
     <form onSubmit={handleSubmit} id="rsvpForm">
       {formData.map(userToForm)}
       {plusOnesAllowed && (
-        <label>
-          Will you be bringing a plus one?
-          <input
-            type="checkbox"
-            checked={plusOneAttending}
-            onChange={() => updatePlusOne("rsvp", !plusOne.rsvp)}
-          />
-        </label>
+        <div className="radios">
+          <label>
+            <input
+              type="checkbox"
+              checked={plusOneAttending}
+              onChange={() => updatePlusOne("rsvp", !plusOne.rsvp)}
+            />
+            <img />
+            Will you be bringing a plus one?
+          </label>
+        </div>
       )}
 
       {plusOneAttending && plusOneToForm()}
