@@ -28,11 +28,14 @@ const Navbar = () => {
         <NavLink onClick={() => setShowNav(false)} to="/Registry">
           Registry
         </NavLink>
+        <NavLink onClick={() => setShowNav(false)} to="/RSVP">
+          RSVP
+        </NavLink>
         <NavLink onClick={() => setShowNav(false)} to="/FAQ">
           FAQ
         </NavLink>
         <NavLink onClick={() => setShowNav(false)} to="/save-the-date">
-          Share Your Contact Info
+          Save the Date
         </NavLink>
       </div>
     </div>

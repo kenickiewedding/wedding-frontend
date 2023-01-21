@@ -56,6 +56,43 @@ p#date {
   font-size: 2em;
 }
 
+.radios {
+  display: flex;
+  justify-content: space-around;
+}
+
+.radios > * { 
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  margin: .5em auto;
+}
+
+.radios  > label > input {
+	display: none;
+}
+
+.radios > label > img {
+	display: inline-block;
+	margin: 0px 1em;
+	height: 50px;
+	width:  50px;
+	border: solid 2px black;
+}
+.radios > label > input:checked + img {  
+	background: url("./assets/images/check-mark.png");
+	background-repeat: no-repeat;
+	background-position:center center;
+	background-size: 30px 30px;
+}
+
+input[type="radio"] {
+  -webkit-appearance: checkbox; /* Chrome, Safari, Opera */
+  -moz-appearance: checkbox;    /* Firefox */
+  -ms-appearance: checkbox;     /* not currently supported */
+}
+
 .main {
   margin: 0 auto;
   /* max-width: 768px; */

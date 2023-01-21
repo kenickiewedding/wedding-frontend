@@ -8,7 +8,7 @@ const keyTransform = ({
   addressLine2: address_line_2,
   city,
   state,
-  zip,
+  zip
 }) => {
   return {
     first_name,
@@ -18,9 +18,27 @@ const keyTransform = ({
     address_line_2,
     city,
     state,
-    zip,
+    zip
   };
 };
+
+const keyTransformRSVP = ({
+  firstName: first_name,
+  lastName: last_name,
+  rsvp,
+  diningPreference: dining_preference,
+  dietaryNotes: dietary_notes,
+  id,
+  email
+}) => ({
+  first_name,
+  last_name,
+  rsvp,
+  dining_preference,
+  dietary_notes,
+  id,
+  email
+});
 
 export const getUsers = (lastName) => {
   return fetch(API + `/users?last_name=${lastName}`).then((response) =>
@@ -39,9 +57,23 @@ export const createUsers = (users) => {
   return fetch(API + `/users`, {
     method: "POST", // or 'PUT'
     headers: {
-      "Content-Type": "application/json",
+      "Content-Type": "application/json"
     },
-    body: JSON.stringify({ users }),
+    body: JSON.stringify({ users })
+  }).then((res) => res.json());
+};
+
+export const rsvpUsers = ({ users, plusOne }) => {
+  users = users.map(keyTransformRSVP);
+  plusOne = keyTransformRSVP(plusOne);
+  const body = plusOne.rsvp ? { users, plus_one: plusOne } : { users };
+
+  return fetch(API + `/users/rsvp`, {
+    method: "POST", // or 'PUT'
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(body)
   }).then((res) => res.json());
 };
 
@@ -49,9 +81,9 @@ export const login = (password) =>
   fetch(API + `/password`, {
     method: "POST", // or 'PUT'
     headers: {
-      "Content-Type": "application/json",
+      "Content-Type": "application/json"
     },
-    body: JSON.stringify({ password }),
+    body: JSON.stringify({ password })
   }).then((res) => res.json());
 
 export const ping = () => {
