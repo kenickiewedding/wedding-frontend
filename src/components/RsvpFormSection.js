@@ -11,7 +11,7 @@ const RsvpFormSection = ({
   const fullNameSlug = plusOneOf ? "plus-one-" : `${firstName}-${lastName}-`;
   return (
     <>
-      <label>
+      <label className="center-text big">
         {plusOneOf
           ? "Tell us about your plus one!"
           : `${firstName} ${lastName}`}
@@ -51,7 +51,7 @@ const RsvpFormSection = ({
               value={true}
               defaultChecked={rsvp}
             />
-            <img />
+            <img alt="checkbox" />
           </label>
           <label>
             Regretably Declines
@@ -61,7 +61,7 @@ const RsvpFormSection = ({
               value={false}
               defaultChecked={!rsvp}
             />
-            <img />
+            <img alt="checkbox" />
           </label>
         </div>
       )}
@@ -79,7 +79,7 @@ const RsvpFormSection = ({
               value="omnivore"
               defaultChecked={diningPreference === "omnivore"}
             />
-            <img />
+            <img alt="checkbox" />
           </>
         </label>
         <label>
@@ -91,7 +91,7 @@ const RsvpFormSection = ({
               value="vegetarian"
               defaultChecked={diningPreference === "vegetarian"}
             />
-            <img />
+            <img alt="checkbox" />
           </>
         </label>
         <label>
@@ -103,7 +103,7 @@ const RsvpFormSection = ({
               value="vegan"
               defaultChecked={diningPreference === "vegan"}
             />
-            <img />
+            <img alt="checkbox" />
           </>
         </label>
       </div>

@@ -19,12 +19,12 @@ function Home() {
         onClick={() => {
           searchParams.set("open", "true");
           navigate({
-            pathname: "/save-the-date",
-            search: searchParams.toString(),
+            pathname: "/rsvp",
+            search: searchParams.toString()
           });
         }}
       >
-        Share Your Address
+        RSVP!
       </button>
     </main>
   );

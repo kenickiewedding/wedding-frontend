@@ -149,11 +149,34 @@ a:visited {
   display: none;
 }
 
+.rsvp .thanks-but-no-thanks {
+  margin: 0 auto;
+}
+
+#rsvpForm label {
+  font-size: .8em;
+  font-family: gotham;
+}
+
+#rsvpForm label.big {
+  font-size: 1em;
+}
+
+#rsvpForm input {
+  margin-top: .5em;
+}
+
 @media only screen and (max-width: 600px) {
   p#date,
   p#address {
     font-family: buckwheat;
     font-size: 1.5em;
+  }
+
+  
+  .rsvp {
+    padding: 0 1em;
+    font-size: .8em;
   }
 
   .navbar-container {
@@ -179,6 +202,19 @@ a:visited {
     display: block;
     align-self: flex-start;
     padding: 0 0.5em;
+  }
+
+  .radios { 
+    display: block;
+    text-align: left;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    margin: auto 0;
+  }
+
+  .radios > * {
+    justify-content: left;
   }
 
   .navbar {
@@ -398,6 +434,10 @@ footer {
 
 .answers p {
   margin-bottom: 1em;
+}
+
+.center-text {
+  text-align: center;
 }
 
 @font-face {
