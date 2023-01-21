@@ -23,8 +23,8 @@ const Schedule = () => {
             <p>Hill Country Barbecue Market</p>
             <p>30 W. 26th Street</p>
             <p>New York (Manhattan), NY</p>
+            <p className="dress-code">Festive Cocktail Attire</p>
           </div>
-          <p className="dress-code">Festive Cocktail Attire</p>
         </div>
       </div>
       <p className="event-date">One Day Anniversary Brunch</p>
@@ -43,8 +43,8 @@ const Schedule = () => {
             <p>City Reliquary</p>
             <p>370 Metropolitan Avenue</p>
             <p>Brooklyn, NY</p>
+            <p className="dress-code">Cozy Casual Attire</p>
           </div>
-          <p className="dress-code">Cozy Casual Attire</p>
         </div>
       </div>
     </div>

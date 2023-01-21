@@ -34,8 +34,8 @@ const Navbar = () => {
         <NavLink onClick={() => setShowNav(false)} to="/FAQ">
           FAQ
         </NavLink>
-        <NavLink onClick={() => setShowNav(false)} to="/save-the-date">
-          Save the Date
+        <NavLink onClick={() => setShowNav(false)} to="/Schedule">
+          Schedule
         </NavLink>
       </div>
     </div>
