@@ -117,9 +117,9 @@ const RsvpFormSection = ({
         />
       </label>
       <label>
-        Email Address:
+        Email Address
         <input
-          type="text"
+          type="email"
           name={fullNameSlug + "email"}
           value={email}
           onChange={(e) => updateForm("email", e.target.value)}

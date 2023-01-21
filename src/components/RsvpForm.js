@@ -25,17 +25,18 @@ const RsvpForm = ({ users }) => {
     })
   );
   const [formData, setFormData] = useState(getInitialState);
-  const initialPlusOneData = extantPlusOne || {
-    firstName: "",
-    lastName: "",
-    email: "",
-    rsvp: false,
-    diningPreference: "omnivore",
-    dietaryNotes: "",
-    plusOneOf: users[0].id
-  };
+  const initialPlusOneData = extantPlusOne?.id
+    ? { ...extantPlusOne, plusOneOf: users[0].id }
+    : {
+        firstName: "",
+        lastName: "",
+        email: "",
+        rsvp: false,
+        diningPreference: "omnivore",
+        dietaryNotes: "",
+        plusOneOf: users[0].id
+      };
   const [plusOne, setPlusOne] = useState(initialPlusOneData);
-  console.log("plusOne", plusOne);
   const updatePlusOne = (key, val) => {
     setPlusOne({ ...plusOne, [key]: val });
   };
@@ -64,7 +65,16 @@ const RsvpForm = ({ users }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    rsvpUsers({ users: formData, plusOne });
+    if (
+      formData.find((user) => !user.email) ||
+      (plusOne.firstName && !plusOne.email)
+    ) {
+      alert(
+        "Please ensure you've entered an email for each guest before submitting so we can keep you all in the loop!"
+      );
+    } else {
+      rsvpUsers({ users: formData, plusOne });
+    }
   };
 
   return (
