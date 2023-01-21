@@ -47,6 +47,10 @@ p {
   margin: 0 auto;
 }
 
+.text p {
+  padding-bottom: .5em;
+}
+
 p#date {
   font-family: buckwheat;
   font-size: 2em;

@@ -5,7 +5,7 @@ import Rsvp from "../containers/Rsvp";
 const RsvpLandingPage = () => {
   const [hasUsers, setHasUsers] = useState(false);
   return (
-    <div className="rsvp">
+    <div className="rsvp text">
       {!hasUsers && (
         <>
           <h1>Hooray! You're here!</h1>

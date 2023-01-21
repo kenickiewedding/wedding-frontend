@@ -10,7 +10,9 @@ const FindUserForm = ({ ChildComponent, submitText, onComplete }) => {
   const [firstName, setFirstName] = useState(initialFirstName);
   const [lastName, setLastName] = useState(initialLastName);
   const [users, setUsers] = useState([]);
-  users.length > 0 && onComplete && onComplete();
+  useEffect(() => {
+    users.length > 0 && onComplete && onComplete();
+  }, [users]);
 
   const getUsers = () => {
     firstName &&
@@ -26,7 +28,6 @@ const FindUserForm = ({ ChildComponent, submitText, onComplete }) => {
       });
   };
   useEffect(getUsers, []);
-
   return (
     <>
       {users.some((user) => user) ? (
