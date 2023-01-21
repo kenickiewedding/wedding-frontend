@@ -9,6 +9,7 @@ import Wip from "../components/Wip";
 import { travelQuestions } from "../assets/text/travel";
 import { FAQuestions } from "../assets/text/FAQ";
 import RsvpLandingPage from "../components/RsvpLandingPage.js";
+import Schedule from "./Schedule";
 
 export const AuthenticatedApp = () => (
   <>
@@ -28,6 +29,7 @@ export const AuthenticatedApp = () => (
         <Route path="/rsvp" element={<RsvpLandingPage />} />
         <Route path="/Pictures" element={<Wip />} />
         <Route path="/Registry" element={<Wip />} />
+        <Route path="/Schedule" element={<Schedule />} />
       </Routes>
     </main>
   </>
