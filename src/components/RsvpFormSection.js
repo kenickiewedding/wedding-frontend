@@ -54,7 +54,7 @@ const RsvpFormSection = ({
             <img />
           </label>
           <label>
-            Regretably Declines
+            Regretfully Declines
             <input
               type="radio"
               name={fullNameSlug + " rsvp"}
