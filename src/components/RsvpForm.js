@@ -1,18 +1,28 @@
 import { useState } from "react";
+import { rsvpUsers } from "../services/requests";
 import RsvpFormSection from "./RsvpFormSection";
 
 const RsvpForm = ({ users }) => {
   const getInitialState = users.map(
-    ({ firstName, lastName, rsvp, diningPreference, dietaryNotes }) => ({
+    ({
+      firstName,
+      lastName,
+      rsvp,
+      diningPreference,
+      dietaryNotes,
+      email,
+      id
+    }) => ({
       firstName,
       lastName,
       rsvp: rsvp || true,
       diningPreference: diningPreference || "omnivore",
-      dietaryNotes: dietaryNotes || ""
+      dietaryNotes: dietaryNotes || "",
+      email,
+      id
     })
   );
   const [formData, setFormData] = useState(getInitialState);
-  console.log(formData);
   const updateUserInForm = (index, key, val) => {
     const newForm = [...formData];
     newForm[index] = { ...newForm[index], [key]: val };
@@ -28,7 +38,17 @@ const RsvpForm = ({ users }) => {
     );
   };
 
-  return <form id="rsvpForm">{formData.map(userToForm)}</form>;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    rsvpUsers(formData);
+  };
+
+  return (
+    <form onSubmit={handleSubmit} id="rsvpForm">
+      {formData.map(userToForm)}
+      <input type="submit" value="Submit!" />
+    </form>
+  );
 };
 
 export default RsvpForm;

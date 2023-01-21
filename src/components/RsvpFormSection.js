@@ -4,10 +4,10 @@ const RsvpFormSection = ({
   rsvp,
   diningPreference,
   dietaryNotes,
-  updateForm
+  updateForm,
+  email
 }) => {
   const fullNameSlug = `${firstName}-${lastName}-`;
-  console.log("diningPreference is Omnivore", diningPreference === "omnivore");
   return (
     <>
       <h3>
@@ -75,6 +75,15 @@ const RsvpFormSection = ({
           name={fullNameSlug + "dietary-restrictions"}
           value={dietaryNotes}
           onChange={(e) => updateForm("dietaryNotes", e.target.value)}
+        />
+      </label>
+      <label>
+        What's your email?
+        <input
+          type="text"
+          name={fullNameSlug + "email"}
+          value={email}
+          onChange={(e) => updateForm("email", e.target.value)}
         />
       </label>
     </>
