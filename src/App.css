@@ -166,6 +166,48 @@ a:visited {
   margin-top: .5em;
 }
 
+.event-landing {
+  /* display: grid; */
+  /* font-family: gotham; */
+  /* grid-template-columns: 2fr 2fr; */
+  /* margin: 1em; */
+}
+
+.event {
+  margin-top: .5em;
+  font-size: .7em;
+  font-family: poppins;
+  padding: 0 2em;
+}
+
+.event-landing * {
+  margin-bottom: .25em;
+}
+
+.event > * {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-around;
+}
+
+.event-line {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-family: buckwheat;
+}
+
+.event p {
+  font-size: .8em;
+}
+
+.event-date {
+  font-family: buckwheat;
+  font-size: 1.25em;
+  margin-bottom: 0em;
+}
+
+
 @media only screen and (max-width: 600px) {
   p#date,
   p#address {
