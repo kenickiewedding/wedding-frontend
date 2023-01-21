@@ -28,14 +28,16 @@ const keyTransformRSVP = ({
   rsvp,
   diningPreference: dining_preference,
   dietaryNotes: dietary_notes,
-  id
+  id,
+  email
 }) => ({
   first_name,
   last_name,
   rsvp,
   dining_preference,
   dietary_notes,
-  id
+  id,
+  email
 });
 
 export const getUsers = (lastName) => {
@@ -61,14 +63,17 @@ export const createUsers = (users) => {
   }).then((res) => res.json());
 };
 
-export const rsvpUsers = (users) => {
+export const rsvpUsers = ({ users, plusOne }) => {
   users = users.map(keyTransformRSVP);
+  plusOne = keyTransformRSVP(plusOne);
+  const body = plusOne.rsvp ? { users, plus_one: plusOne } : { users };
+
   return fetch(API + `/users/rsvp`, {
     method: "POST", // or 'PUT'
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({ users })
+    body: JSON.stringify(body)
   }).then((res) => res.json());
 };
 

@@ -5,37 +5,64 @@ const RsvpFormSection = ({
   diningPreference,
   dietaryNotes,
   updateForm,
-  email
+  email,
+  plusOneOf
 }) => {
-  const fullNameSlug = `${firstName}-${lastName}-`;
+  const fullNameSlug = plusOneOf ? "plus-one-" : `${firstName}-${lastName}-`;
   return (
     <>
       <h3>
-        {firstName} {lastName}
+        {plusOneOf
+          ? "Tell us about your plus one!"
+          : `${firstName} ${lastName}`}
       </h3>
-      <div
-        className="radios"
-        onChange={(e) => updateForm("rsvp", e.target.value === "true")}
-      >
-        <label>
-          Joyfully Accepts
-          <input
-            type="radio"
-            name={fullNameSlug + " rsvp"}
-            value={true}
-            defaultChecked={rsvp}
-          />
-        </label>
-        <label>
-          Regretably Declines
-          <input
-            type="radio"
-            name={fullNameSlug + " rsvp"}
-            value={false}
-            defaultChecked={!rsvp}
-          />
-        </label>
-      </div>
+      {plusOneOf && (
+        <>
+          <label>
+            First Name
+            <input
+              type="text"
+              name={fullNameSlug + "first-name"}
+              value={firstName}
+              onChange={(e) => updateForm("firstName", e.target.value)}
+            />
+          </label>
+          <label>
+            Last Name
+            <input
+              type="text"
+              name={fullNameSlug + "last-name"}
+              value={lastName}
+              onChange={(e) => updateForm("lastName", e.target.value)}
+            />
+          </label>
+        </>
+      )}
+      {!plusOneOf && (
+        <div
+          className="radios"
+          onChange={(e) => updateForm("rsvp", e.target.value === "true")}
+        >
+          <label>
+            Joyfully Accepts
+            <input
+              type="radio"
+              name={fullNameSlug + " rsvp"}
+              value={true}
+              defaultChecked={rsvp}
+            />
+          </label>
+          <label>
+            Regretably Declines
+            <input
+              type="radio"
+              name={fullNameSlug + " rsvp"}
+              value={false}
+              defaultChecked={!rsvp}
+            />
+          </label>
+        </div>
+      )}
       <div
         className="radios"
         onChange={(e) => updateForm("diningPreference", e.target.value)}
@@ -78,7 +105,7 @@ const RsvpFormSection = ({
         />
       </label>
       <label>
-        What's your email?
+        Email Address:
         <input
           type="text"
           name={fullNameSlug + "email"}
