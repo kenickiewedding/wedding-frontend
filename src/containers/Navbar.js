@@ -35,7 +35,7 @@ const Navbar = () => {
           FAQ
         </NavLink>
         <NavLink onClick={() => setShowNav(false)} to="/save-the-date">
-          Share Your Contact Info
+          Save the Date
         </NavLink>
       </div>
     </div>
