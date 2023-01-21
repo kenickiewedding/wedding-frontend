@@ -51,7 +51,7 @@ const RsvpFormSection = ({
               value={true}
               defaultChecked={rsvp}
             />
-            <img alt="checkbox" />
+            <img />
           </label>
           <label>
             Regretably Declines
@@ -61,7 +61,7 @@ const RsvpFormSection = ({
               value={false}
               defaultChecked={!rsvp}
             />
-            <img alt="checkbox" />
+            <img />
           </label>
         </div>
       )}
@@ -79,7 +79,7 @@ const RsvpFormSection = ({
               value="omnivore"
               defaultChecked={diningPreference === "omnivore"}
             />
-            <img alt="checkbox" />
+            <img />
           </>
         </label>
         <label>
@@ -91,7 +91,7 @@ const RsvpFormSection = ({
               value="vegetarian"
               defaultChecked={diningPreference === "vegetarian"}
             />
-            <img alt="checkbox" />
+            <img />
           </>
         </label>
         <label>
@@ -103,7 +103,7 @@ const RsvpFormSection = ({
               value="vegan"
               defaultChecked={diningPreference === "vegan"}
             />
-            <img alt="checkbox" />
+            <img />
           </>
         </label>
       </div>
