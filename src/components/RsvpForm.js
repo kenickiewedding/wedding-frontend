@@ -5,7 +5,7 @@ import RsvpFormSection from "./RsvpFormSection";
 const RsvpForm = ({ users }) => {
   console.log("users", users);
   const plusOnesAllowed = users.find((user) => user.plusOnesAllowed > 0);
-  const extantPlusOne = users.find((user) => user.plusOne.id)?.plusOne;
+  const extantPlusOne = users.find((user) => user.plusOne?.id)?.plusOne;
   const getInitialState = users.map(
     ({
       firstName,
