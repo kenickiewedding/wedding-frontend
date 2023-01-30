@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import SaveTheDateContainer from "./SaveTheDateContainer";
 import KirstenAndNicky from "../components/KirstenAndNicky";
 import { Questions } from "../components/Questions";
+import Registry from "../components/Registry";
 import Divider from "../components/Divider";
 import Wip from "../components/Wip";
 import { travelQuestions } from "../assets/text/travel";
@@ -28,7 +29,7 @@ export const AuthenticatedApp = () => (
         />
         <Route path="/rsvp" element={<RsvpLandingPage />} />
         <Route path="/Pictures" element={<Wip />} />
-        <Route path="/Registry" element={<Wip />} />
+        <Route path="/Registry" element={<Registry />} />
         <Route path="/Schedule" element={<Schedule />} />
       </Routes>
     </main>
