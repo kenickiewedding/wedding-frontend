@@ -3,7 +3,6 @@ import { rsvpUsers } from "../services/requests";
 import RsvpFormSection from "./RsvpFormSection";
 
 const RsvpForm = ({ users }) => {
-  const plusOnesAllowed = users.find((user) => user.plusOnesAllowed > 0);
   const extantPlusOne = users.find((user) => user.plusOne?.id)?.plusOne;
   const [submitted, setSubmitted] = useState(false);
   const [vaccineRequirement, setVaccineRequirement] = useState(false);
@@ -48,9 +47,10 @@ const RsvpForm = ({ users }) => {
     newForm[index] = { ...newForm[index], [key]: val };
     setFormData(newForm);
   };
-  const noRSVPs =
-    !formData.find((item) => item.rsvp) &&
-    (!extantPlusOne || !plusOneAttending);
+  const inviteeAttending = formData.find((item) => item.rsvp);
+  const plusOnesAllowed =
+    inviteeAttending && users.find((user) => user.plusOnesAllowed > 0);
+  const noRSVPs = !inviteeAttending && (!extantPlusOne || !plusOneAttending);
 
   const canSubmit = vaccineRequirement || noRSVPs;
 
@@ -85,7 +85,6 @@ const RsvpForm = ({ users }) => {
       setSubmitted(true);
     }
   };
-  console.log("can submit?", canSubmit);
 
   return submitted ? (
     <div className="thanks-but-no-thanks">
