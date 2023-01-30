@@ -78,6 +78,7 @@ p#date {
   margin: 0px 1em;
   height: 50px;
   width: 50px;
+  min-width: 50px;
   border: solid 2px black;
 }
 .radios > label > input:checked + img {
@@ -349,6 +350,14 @@ select {
   font-size: 0.7em;
 }
 
+button:disabled,
+.button:disabled,
+input[type="submit"]:disabled {
+  background-color: var(--background);
+  border-color: var(--powder-blue);
+  color: var(--powder-blue);
+}
+
 button,
 .button,
 input[type="submit"] {
@@ -393,6 +402,10 @@ input::placeholder {
 .form-user h1 {
   font-size: 1.5em;
   color: var(--font);
+}
+
+.submitWarning {
+  font-size: 0.6em;
 }
 
 .explainer {
