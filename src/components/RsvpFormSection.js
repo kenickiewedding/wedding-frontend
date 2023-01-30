@@ -6,7 +6,7 @@ const RsvpFormSection = ({
   dietaryNotes,
   updateForm,
   email,
-  plusOneOf
+  plusOneOf,
 }) => {
   const fullNameSlug = plusOneOf ? "plus-one-" : `${firstName}-${lastName}-`;
   return (
@@ -65,66 +65,70 @@ const RsvpFormSection = ({
           </label>
         </div>
       )}
-      <label>What are your dining preferences?</label>
-      <div
-        className="radios"
-        onChange={(e) => updateForm("diningPreference", e.target.value)}
-      >
-        <label>
-          <>
-            Omnivore
+      {rsvp && (
+        <>
+          <label>What are your dining preferences?</label>
+          <div
+            className="radios"
+            onChange={(e) => updateForm("diningPreference", e.target.value)}
+          >
+            <label>
+              <>
+                Omnivore
+                <input
+                  type="radio"
+                  name={fullNameSlug + "dining-preference"}
+                  value="omnivore"
+                  defaultChecked={diningPreference === "omnivore"}
+                />
+                <img />
+              </>
+            </label>
+            <label>
+              <>
+                Vegetarian
+                <input
+                  type="radio"
+                  name={fullNameSlug + "dining-preference"}
+                  value="vegetarian"
+                  defaultChecked={diningPreference === "vegetarian"}
+                />
+                <img />
+              </>
+            </label>
+            <label>
+              <>
+                Vegan
+                <input
+                  type="radio"
+                  name={fullNameSlug + "dining-preference"}
+                  value="vegan"
+                  defaultChecked={diningPreference === "vegan"}
+                />
+                <img />
+              </>
+            </label>
+          </div>
+          <label>
+            Any dietary restrictions?
             <input
-              type="radio"
-              name={fullNameSlug + "dining-preference"}
-              value="omnivore"
-              defaultChecked={diningPreference === "omnivore"}
+              type="text"
+              name={fullNameSlug + "dietary-restrictions"}
+              value={dietaryNotes}
+              onChange={(e) => updateForm("dietaryNotes", e.target.value)}
             />
-            <img />
-          </>
-        </label>
-        <label>
-          <>
-            Vegetarian
+          </label>
+          <label>
+            Email Address
             <input
-              type="radio"
-              name={fullNameSlug + "dining-preference"}
-              value="vegetarian"
-              defaultChecked={diningPreference === "vegetarian"}
+              type="email"
+              name={fullNameSlug + "email"}
+              value={email}
+              onChange={(e) => updateForm("email", e.target.value)}
             />
-            <img />
-          </>
-        </label>
-        <label>
-          <>
-            Vegan
-            <input
-              type="radio"
-              name={fullNameSlug + "dining-preference"}
-              value="vegan"
-              defaultChecked={diningPreference === "vegan"}
-            />
-            <img />
-          </>
-        </label>
-      </div>
-      <label>
-        Any dietary restrictions?
-        <input
-          type="text"
-          name={fullNameSlug + "dietary-restrictions"}
-          value={dietaryNotes}
-          onChange={(e) => updateForm("dietaryNotes", e.target.value)}
-        />
-      </label>
-      <label>
-        Email Address
-        <input
-          type="email"
-          name={fullNameSlug + "email"}
-          value={email}
-          onChange={(e) => updateForm("email", e.target.value)}
-        />
-      </label>
+          </label>
+        </>
+      )}
     </>
   );
 };
