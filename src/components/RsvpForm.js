@@ -3,9 +3,9 @@ import { rsvpUsers } from "../services/requests";
 import RsvpFormSection from "./RsvpFormSection";
 
 const RsvpForm = ({ users }) => {
-  const plusOnesAllowed = users.find((user) => user.plusOnesAllowed > 0);
   const extantPlusOne = users.find((user) => user.plusOne?.id)?.plusOne;
   const [submitted, setSubmitted] = useState(false);
+  const [vaccineRequirement, setVaccineRequirement] = useState(false);
   const getInitialState = users.map(
     ({
       firstName,
@@ -14,7 +14,7 @@ const RsvpForm = ({ users }) => {
       diningPreference,
       dietaryNotes,
       email,
-      id
+      id,
     }) => ({
       firstName,
       lastName,
@@ -22,7 +22,7 @@ const RsvpForm = ({ users }) => {
       diningPreference: diningPreference || "omnivore",
       dietaryNotes: dietaryNotes || "",
       email,
-      id
+      id,
     })
   );
   const [formData, setFormData] = useState(getInitialState);
@@ -35,7 +35,7 @@ const RsvpForm = ({ users }) => {
         rsvp: false,
         diningPreference: "omnivore",
         dietaryNotes: "",
-        plusOneOf: users[0].id
+        plusOneOf: users[0].id,
       };
   const [plusOne, setPlusOne] = useState(initialPlusOneData);
   const updatePlusOne = (key, val) => {
@@ -47,6 +47,13 @@ const RsvpForm = ({ users }) => {
     newForm[index] = { ...newForm[index], [key]: val };
     setFormData(newForm);
   };
+  const inviteeAttending = formData.find((item) => item.rsvp);
+  const plusOnesAllowed =
+    inviteeAttending && users.find((user) => user.plusOnesAllowed > 0);
+  const noRSVPs = !inviteeAttending && (!extantPlusOne || !plusOneAttending);
+
+  const canSubmit = vaccineRequirement || noRSVPs;
+
   const userToForm = (userData, i) => {
     return (
       <RsvpFormSection
@@ -119,7 +126,30 @@ const RsvpForm = ({ users }) => {
         )}
 
         {plusOneAttending && plusOneToForm()}
-        <input type="submit" value="Submit!" />
+        <div className="radios">
+          <label>
+            I understand that testing and up-to-date COVID vaccination with the
+            bivalent booster are required to attend and that my vaccine card
+            will be verified.
+            <input
+              type="checkbox"
+              checked={vaccineRequirement}
+              onChange={() => setVaccineRequirement(!vaccineRequirement)}
+            />
+            <img />
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="submit" value="Submit!" disabled={!canSubmit} />
+            {!canSubmit && (
+              <span className="submitWarning">
+                Please accept the COVID vaccination and testing acknowledgement
+                to RSVP.
+              </span>
+            )}
+          </label>
+        </div>
       </form>
     </>
   );
