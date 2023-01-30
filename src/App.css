@@ -48,7 +48,7 @@ p {
 }
 
 .text p {
-  padding-bottom: .5em;
+  padding-bottom: 0.5em;
 }
 
 p#date {
@@ -61,36 +61,36 @@ p#date {
   justify-content: space-around;
 }
 
-.radios > * { 
+.radios > * {
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
-  margin: .5em auto;
+  margin: 0.5em auto;
 }
 
-.radios  > label > input {
-	display: none;
+.radios > label > input {
+  display: none;
 }
 
 .radios > label > img {
-	display: inline-block;
-	margin: 0px 1em;
-	height: 50px;
-	width:  50px;
-	border: solid 2px black;
+  display: inline-block;
+  margin: 0px 1em;
+  height: 50px;
+  width: 50px;
+  border: solid 2px black;
 }
-.radios > label > input:checked + img {  
-	background: url("./assets/images/check-mark.png");
-	background-repeat: no-repeat;
-	background-position:center center;
-	background-size: 30px 30px;
+.radios > label > input:checked + img {
+  background: url("./assets/images/check-mark.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 30px 30px;
 }
 
 input[type="radio"] {
   -webkit-appearance: checkbox; /* Chrome, Safari, Opera */
-  -moz-appearance: checkbox;    /* Firefox */
-  -ms-appearance: checkbox;     /* not currently supported */
+  -moz-appearance: checkbox; /* Firefox */
+  -ms-appearance: checkbox; /* not currently supported */
 }
 
 .main {
@@ -154,7 +154,7 @@ a:visited {
 }
 
 #rsvpForm label {
-  font-size: .8em;
+  font-size: 0.8em;
   font-family: gotham;
 }
 
@@ -163,7 +163,7 @@ a:visited {
 }
 
 #rsvpForm input {
-  margin-top: .5em;
+  margin-top: 0.5em;
 }
 
 .event-landing {
@@ -174,14 +174,14 @@ a:visited {
 }
 
 .event {
-  margin-top: .5em;
-  font-size: .7em;
+  margin-top: 0.5em;
+  font-size: 0.7em;
   font-family: poppins;
   padding: 0 2em;
 }
 
 .event-landing * {
-  margin-bottom: .25em;
+  margin-bottom: 0.25em;
 }
 
 .event > * {
@@ -198,7 +198,7 @@ a:visited {
 }
 
 .event p {
-  font-size: .8em;
+  font-size: 0.8em;
 }
 
 .event-date {
@@ -207,7 +207,6 @@ a:visited {
   margin-bottom: 0em;
 }
 
-
 @media only screen and (max-width: 600px) {
   p#date,
   p#address {
@@ -215,10 +214,9 @@ a:visited {
     font-size: 1.5em;
   }
 
-  
   .rsvp {
     padding: 0 1em;
-    font-size: .8em;
+    font-size: 0.8em;
   }
 
   .navbar-container {
@@ -246,7 +244,7 @@ a:visited {
     padding: 0 0.5em;
   }
 
-  .radios { 
+  .radios {
     display: block;
     text-align: left;
     flex-direction: column;
@@ -454,7 +452,8 @@ footer {
   width: 100px;
 }
 
-.questionContainer {
+.questionContainer,
+.registry {
   padding: 0 1em;
   max-width: 500px;
   margin: 0 auto;
