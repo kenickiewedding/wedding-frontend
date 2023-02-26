@@ -14,7 +14,7 @@ const RsvpForm = ({ users }) => {
       diningPreference,
       dietaryNotes,
       email,
-      id,
+      id
     }) => ({
       firstName,
       lastName,
@@ -22,7 +22,7 @@ const RsvpForm = ({ users }) => {
       diningPreference: diningPreference || "omnivore",
       dietaryNotes: dietaryNotes || "",
       email,
-      id,
+      id
     })
   );
   const [formData, setFormData] = useState(getInitialState);
@@ -35,7 +35,7 @@ const RsvpForm = ({ users }) => {
         rsvp: false,
         diningPreference: "omnivore",
         dietaryNotes: "",
-        plusOneOf: users[0].id,
+        plusOneOf: users[0].id
       };
   const [plusOne, setPlusOne] = useState(initialPlusOneData);
   const updatePlusOne = (key, val) => {
@@ -74,8 +74,9 @@ const RsvpForm = ({ users }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (
-      formData.find((user) => !user.email) ||
-      (plusOne.firstName && !plusOne.email)
+      !noRSVPs &&
+      (formData.find((user) => !user.email) ||
+        (plusOne.firstName && !plusOne.email))
     ) {
       alert(
         "Please ensure you've entered an email for each guest before submitting so we can keep you all in the loop!"
