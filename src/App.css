@@ -479,6 +479,15 @@ footer {
   margin: 0 auto;
 }
 
+.registry {
+  font-size: 0.7em;
+  font-family: gotham;
+}
+
+.registry p {
+  margin-bottom: 1em;
+}
+
 .question {
   font-family: gotham;
   line-height: 1.3em;
