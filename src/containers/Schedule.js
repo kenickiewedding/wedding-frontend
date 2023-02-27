@@ -17,6 +17,7 @@ const Schedule = () => {
           <p className="dress-code">Festive Cocktail Attire</p>
           <p>Doors Open - 4:30 PM</p>
           <p>Ceremony Begins - 5:00 PM</p>
+          <p>Goodbyes - 12:00 AM</p>
         </div>
         <div className="times">
           {/* <div className="event-line">
@@ -52,7 +53,7 @@ const Schedule = () => {
             <p>370 Metropolitan Avenue</p>
             <p>Brooklyn, NY</p>
             <p className="dress-code">Cozy Casual Attire</p>
-            <p>10 AM - 2 PM</p>
+            <p>10:00 AM - 2:00 PM</p>
           </div>
           <p>
             We'll be greeting family and friends on Sunday morning at the City
