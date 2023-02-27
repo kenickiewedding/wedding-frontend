@@ -43,7 +43,7 @@ export const FAQuestions = [
       "What COVID precautions are being taken to keep everyone safe and healthy?",
     answerParagraphs: [
       "We are excited to celebrate our wedding with our beloved family and friends (that’s you!). That group includes people who are older, immunocompromised, or otherwise at-risk, as well as people with brand new tiny babies at home.",
-      "We will be requiring that all guests are fully vaccinated with all recommended COVID vaccines and boosters. As of right now that means you’ll need to have received the latest bivalent booster. You will also need to take a rapid test and share the results with our wedding coordinator just before arriving at the venue.",
+      "We will be requiring that all guests are fully vaccinated with all recommended COVID vaccines and boosters. As of right now that means you’ll need to have received the updated bivalent booster that came out in September 2022. You will also need to take a rapid test and share the results with our wedding coordinator just before arriving at the venue.",
       "More information will be provided in the lead-up to the event. We appreciate your cooperation! As for other illnesses, we won’t be testing for those, but common sense still applies! If you come down with flu, the Red Death, or are bleeding from the eyes after seeing someone else bleeding from the eyes on your flight, please feel free to cancel and let us know."
     ]
   },

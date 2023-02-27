@@ -190,16 +190,23 @@ a:visited {
   flex-direction: column;
   justify-content: center;
   align-content: space-around;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .event-line {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  font-family: buckwheat;
+  /* font-family: buckwheat; */
+  font-size: 0.8em;
 }
 
 .event p {
   font-size: 0.8em;
+}
+
+.event .location {
+  font-weight: bold;
 }
 
 .event-date {
