@@ -75,7 +75,7 @@ const RsvpForm = ({ users }) => {
     e.preventDefault();
     if (
       !noRSVPs &&
-      (formData.find((user) => !user.email) ||
+      (formData.find((user) => !user.email && user.rsvp === true) ||
         (plusOne.firstName && !plusOne.email))
     ) {
       alert(
