@@ -8,11 +8,11 @@ const Registry = () => {
         feel obligated to give us a gift.
       </p>
       <p>
-        If you’d like to give us a gift, we’re registered{" "}
+        If you’d like to give us a gift, we’re registered at{" "}
         <a href="https://www.target.com/gift-registry/gift/kirsten-and-nicky-do-a-wedding">
-          at Target
+          Target
         </a>
-        and
+        {" and "}
         <a href="https://www.zola.com/registry/kirstenandnicky">Zola!</a>
       </p>
     </div>
