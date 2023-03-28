@@ -53,7 +53,7 @@ const Schedule = () => {
             <p>370 Metropolitan Avenue</p>
             <p>Brooklyn, NY</p>
             <p className="dress-code">Cozy Casual Attire</p>
-            <p>10:00 AM - 2:00 PM</p>
+            <p>10:30 AM - 1:30 PM</p>
           </div>
           <p>
             We'll be greeting family and friends on Sunday morning at the City
